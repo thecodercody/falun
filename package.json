@@ -1,0 +1,14 @@
+{
+  "name"         : "ParadiseWorld",
+  "version"      : "1.0.0",
+  "description"  : "The Greatness of Falun Dafa",
+  "main"         : "server.js",
+  "author"       : "-thecodercody-",
+  "dependencies" : {
+    "body-parser": "latest",
+    "express"    : "latest",
+    "jquery"     : "latest",
+    "method-override": "latest",
+    "nodemon"    : "latest"
+    }
+}
