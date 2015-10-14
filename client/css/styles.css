@@ -38,16 +38,179 @@ body {
   z-index: 8;
 }
 
+.enter {
+  animation-name: enter;
+  animation-duration: 21.7s;
+  animation-timing-function: ease-out;  
+  -webkit-animation-timing-function: ease-out;  
+
+  visibility: visible !important;     
+}
+
+@keyframes enter {
+  0% {
+    transform: scale(0.3)  translateX(-30%) translateY(30%);
+    opacity: 0.2;
+  }
+  23.3% {
+    transform: scale(1.03) translateX(2%) translateY(-2%);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1.0)  translateX(0%) translateY(0%);    
+    opacity: 1;   
+  } 
+  100% {
+    opacity: 1;
+  }   
+}
+
+.enterGlow {
+  animation-name: enterGlow;
+  animation-duration: 21.7s;
+  animation-timing-function: ease-out;  
+  -webkit-animation-timing-function: ease-out;       
+}
+
+@keyframes enterGlow {
+  from {
+    box-shadow: 0px 0px 89px white;
+  }
+  to {
+    box-shadow: 0px 0px 89px 72vh white;
+  }
+
+  0% {
+    transform: scale(0.3)  translateX(-30%) translateY(30%);
+    opacity: 0.2;
+  }
+  23.3% {
+    transform: scale(1.03) translateX(2%) translateY(-2%);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1.0)  translateX(0%) translateY(0%);     
+    opacity: 1;   
+  } 
+  100% {
+    opacity: 1;
+  }   
+}
+
+.enterColors{
+  animation-name: enterColors;
+  animation-duration: 21.7s;
+  animation-timing-function: ease-out;  
+  -webkit-animation-timing-function: ease-out;       
+}
+
+@keyframes enterColors {
+  0% {
+    transform: scale(0.3)  translateX(-30%) translateY(30%);
+    background-color: red;
+  }
+  3.3% {
+    background-color: orange; 
+  }
+  6.6%{
+    background-color: yellow;
+  }
+  10% {
+    background-color: #00ff00;
+  }
+  13.3%{
+    background-color: #00ffff;
+  }
+  16.6% {
+    background-color: #0000ff;
+  }
+  20% {
+    background-color: #9900ff;
+  } 
+  23.3% {
+    transform: scale(1.03) translateX(2%) translateY(-2%);
+    background-color: #ffccff;
+  }
+  26.7% {
+   background-color: #ffffff;
+  }
+  30% {
+    transform: scale(1.0)  translateX(0%) translateY(0%);
+    background-color: transparent;
+  } 
+  33.3% {
+    background-color: red;
+  }
+  36.6% {
+    background-color: orange; 
+  }
+  40%{
+    background-color: yellow;
+  }
+  43.3% {
+    background-color: #00ff00;
+  }
+  46.7%{
+    background-color: #00ffff;
+  }
+  50% {
+    background-color: #0000ff;
+  }
+  53.3% {
+    background-color: #9900ff;
+  } 
+  56.6% {
+    background-color: #ffccff;
+  }
+  60% {
+   background-color: #ffffff;
+  }
+  63.3% {
+    background-color: transparent;
+  } 
+  66.7% {
+    background-color: red;
+  }
+  70% {
+    background-color: orange;
+    opacity: 1; 
+  }
+  73.3%{
+    background-color: yellow;
+  }
+  76.6% {
+    background-color: #00ff00;
+  }
+  80%{
+    background-color: #00ffff;
+  }
+  83.3% {
+    background-color: #0000ff;
+  }
+  86.7% {
+    background-color: #9900ff;
+  } 
+  90% {
+    background-color: #ffccff;
+  }
+  93.3% {
+   background-color: #ffffff;
+  }
+  96.6% {
+    background-color: transparent;
+  } 
+  100% {
+    background-color: red;
+  }   
+}
+
+
 .hidden {
   visibility: hidden;
 }
 
 #colors {
   z-index: 6;
-  animation-name: changingColors;
-  animation-duration: 7.2s;
-  animation-iteration-count: infinite;
-  visibility: visible !important;
   position: absolute;
   border-radius: 100%;
   left: 50%;
@@ -71,35 +234,139 @@ body {
   width: 300px;
 }
 
-@keyframes changingColors {
+.pulseIn {
+  animation-name: pulseIn;
+  animation-duration: 21.7s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes pulseIn {
+  from {
+    transform: scale(1.0);
+  }
+  to {
+    transform: scale(0.7);
+  }
+}
+
+.pulseInGlow {
+  animation-name: pulseInGlow;
+  animation-duration: 21.7s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes pulseInGlow {
+  from {
+    transform: scale(1.0);
+    box-shadow: 0px 0px 100px white;
+  }
+  to {
+    transform: scale(0.7);
+    box-shadow: 0px 0px 100px 75vh white;
+  }
+}
+
+.pulseInColor {
+  animation-name: pulseInColor;
+  animation-duration: 21.7s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes pulseInColor {
+  from {
+    transform: scale(1.0);
+  }
+  to {
+    transform: scale(0.7);
+  }
   0% {
     background-color: red;
   }
-  10% {
+  3.3% {
     background-color: orange; 
   }
-  20%{
+  6.6%{
     background-color: yellow;
   }
-  30% {
+  10% {
     background-color: #00ff00;
   }
+  13.3%{
+    background-color: #00ffff;
+  }
+  16.6% {
+    background-color: #0000ff;
+  }
+  20% {
+    background-color: #9900ff;
+  } 
+  23.3% {
+    background-color: #ffccff;
+  }
+  26.7% {
+   background-color: #ffffff;
+  }
+  30% {
+    background-color: transparent;
+  } 
+  33.3% {
+    background-color: red;
+  }
+  36.6% {
+    background-color: orange; 
+  }
   40%{
+    background-color: yellow;
+  }
+  43.3% {
+    background-color: #00ff00;
+  }
+  46.7%{
     background-color: #00ffff;
   }
   50% {
     background-color: #0000ff;
   }
-  60% {
+  53.3% {
     background-color: #9900ff;
   } 
-  70% {
+  56.6% {
     background-color: #ffccff;
   }
-  80% {
+  60% {
    background-color: #ffffff;
   }
+  63.3% {
+    background-color: transparent;
+  } 
+  66.7% {
+    background-color: red;
+  }
+  70% {
+    background-color: orange; 
+  }
+  73.3%{
+    background-color: yellow;
+  }
+  76.6% {
+    background-color: #00ff00;
+  }
+  80%{
+    background-color: #00ffff;
+  }
+  83.3% {
+    background-color: #0000ff;
+  }
+  86.7% {
+    background-color: #9900ff;
+  } 
   90% {
+    background-color: #ffccff;
+  }
+  93.3% {
+   background-color: #ffffff;
+  }
+  96.6% {
     background-color: transparent;
   } 
   100% {
@@ -107,6 +374,145 @@ body {
   }
 }
 
+.pulseOut {
+  animation-name: pulseOut;
+  animation-duration: 21.7s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes pulseOut {
+  from {
+    transform: scale(0.7);
+  }
+  to {
+    transform: scale(1.0);
+  }
+}
+
+.pulseOutGlow {
+  animation-name: pulseOutGlow;
+  animation-duration: 21.7s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes pulseOutGlow {
+  from {
+    transform: scale(0.7);
+    box-shadow: 0px 0px 100px white;
+  }
+  to {
+    transform: scale(1.0);
+    box-shadow: 0px 0px 100px 75vh white;
+  }
+}
+
+.pulseOutColor {
+  animation-name: pulseOutColor;
+  animation-duration: 21.7s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes pulseOutColor {
+  from {
+    transform: scale(0.7);
+  }
+  to {
+    transform: scale(1.0);
+  }
+  0% {
+    background-color: red;
+  }
+  3.3% {
+    background-color: orange; 
+  }
+  6.6%{
+    background-color: yellow;
+  }
+  10% {
+    background-color: #00ff00;
+  }
+  13.3%{
+    background-color: #00ffff;
+  }
+  16.6% {
+    background-color: #0000ff;
+  }
+  20% {
+    background-color: #9900ff;
+  } 
+  23.3% {
+    background-color: #ffccff;
+  }
+  26.7% {
+   background-color: #ffffff;
+  }
+  30% {
+    background-color: transparent;
+  } 
+  33.3% {
+    background-color: red;
+  }
+  36.6% {
+    background-color: orange; 
+  }
+  40%{
+    background-color: yellow;
+  }
+  43.3% {
+    background-color: #00ff00;
+  }
+  46.7%{
+    background-color: #00ffff;
+  }
+  50% {
+    background-color: #0000ff;
+  }
+  53.3% {
+    background-color: #9900ff;
+  } 
+  56.6% {
+    background-color: #ffccff;
+  }
+  60% {
+   background-color: #ffffff;
+  }
+  63.3% {
+    background-color: transparent;
+  } 
+  66.7% {
+    background-color: red;
+  }
+  70% {
+    background-color: orange; 
+  }
+  73.3%{
+    background-color: yellow;
+  }
+  76.6% {
+    background-color: #00ff00;
+  }
+  80%{
+    background-color: #00ffff;
+  }
+  83.3% {
+    background-color: #0000ff;
+  }
+  86.7% {
+    background-color: #9900ff;
+  } 
+  90% {
+    background-color: #ffccff;
+  }
+  93.3% {
+   background-color: #ffffff;
+  }
+  96.6% {
+    background-color: transparent;
+  } 
+  100% {
+    background-color: red;
+  }
+}
 
 
 

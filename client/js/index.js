@@ -72,13 +72,15 @@ var darkLinks = ["img/dark/resized/b1.png",
                    "img/dark/resized/b12.png"
 ];
 
-var rotate = function(links, shade, direction) {
   var shadeClass;
+  var shade = 'dark';
+  var links = darkLinks;
   if(shade === 'dark'){
     shadeClass = darks;
   } else {
     shadeClass = lights;
   }
+
   $.each(links, function(i, el){
     $('<img class="' + shade + 'Img">').attr('src', el).appendTo(shadeClass);
   });
@@ -91,44 +93,112 @@ var rotate = function(links, shade, direction) {
 
   $('td').append(shadeClass);
 
-  var current = 0;
-  var numLoops = 0;
+  var lightCurrent = 0;
+  var darkCurrent = 0;
+  var lightLoops = 0;
+  var darkLoops = 0;
   var images;
-
+  var numLoops;
+ 
   if(shade === 'light'){
     images = $('.lightImg');
   } else { // if dark
     images = $('.darkImg');
   }
 
-  setTimeout(function(){
-    if(current < images.length - 1){  
-      $(images[current]).hide();
-      $(images[current + 1]).show();
-      current++;
-    } else {
-      $(images[current]).hide();
-      $(images[0]).show();
-      current = 0;
-    }
+var rotate = function(links, shade, direction) {
 
-    numLoops++;
+
+  setTimeout(function(){
+      if(shade === 'light'){  
+        if(direction === 'backward') {
+          if(lightCurrent < images.length - 1){  
+            $(images[lightCurrent]).hide();
+            $(images[lightCurrent + 1]).show();
+            lightCurrent++;
+          } else {
+            $(images[lightCurrent]).hide();
+            $(images[0]).show();
+            lightCurrent = 0;
+            lightLoops++;
+            shade = 'light';
+            links = lightLinks;
+          }
+        } else { // if forward
+          if(lightCurrent !== 0){
+            $(images[lightCurrent]).hide();
+            $(images[lightCurrent - 1]).show();
+            lightCurrent--;
+          } else {
+            $(images[lightCurrent]).hide();
+            $(images[images.length - 1]).show();
+            lightCurrent = images.length - 1;
+            lightLoops++;
+            shade = 'light';
+            links = lightLinks;
+          }
+        }
+      } else { // if shade === dark
+        if(direction === 'backward') {
+          if(darkCurrent < images.length - 1){  
+            $(images[darkCurrent]).hide();
+            $(images[darkCurrent + 1]).show();
+            darkCurrent++;
+          } else {
+            $(images[darkCurrent]).hide();
+            $(images[0]).show();
+            darkCurrent = 0;
+            darkLoops++;
+            shade = 'dark';
+            links = darkLinks;
+          }
+        } else { // if forward
+          if(darkCurrent !== 0){
+            $(images[darkCurrent]).hide();
+            $(images[darkCurrent - 1]).show();
+            darkCurrent--;
+          } else {
+            $(images[darkCurrent]).hide();
+            $(images[images.length - 1]).show();
+            darkCurrent = images.length - 1;
+            darkLoops++;
+            shade = 'dark';
+            links = darkLinks;
+          }
+        }
+      }
+    if(shade === 'light'){
+      numLoops = lightLoops;
+    } else {
+      numLoops = darkLoops;
+    }
     
-    if(numLoops === images.length * 18){
-      numLoops = 0;
+    if(numLoops === 18){
       if(shade === 'light'){
+        lightLoops = 0;
+        numLoops = 0;
         if(direction === 'backward'){
+          $('.light').removeClass('enterGlow pulseOutGlow').addClass('pulseInGlow');
           rotate(lightLinks, 'light', 'forward');
           return 1;
         } else { // if forward
+          $('.light').removeClass('pulseInGlow').addClass('pulseOutGlow');
           rotate(lightLinks, 'light', 'backward');
           return 1;
         }
       } else { // if dark
+        darkLoops = 0;
+        numLoops = 0;
         if(direction === 'forward'){
+          $('.dark').removeClass('pulseIn').addClass('pulseOut');
+          $('#colors').removeClass('pulseInColor').addClass('pulseOutColor');
+          $('#dark').removeClass('enter pulseIn').addClass('pulseOut');
           rotate(darkLinks, 'dark', 'backward');
           return 1;
         } else { // if backward
+          $('.dark').removeClass('enter pulseOut').addClass('pulseIn');
+          $('#colors').removeClass('enterColors pulseOutColor').addClass('pulseInColor');
+          $('#dark').removeClass('enter pulseOut').addClass('pulseIn');
           rotate(darkLinks, 'dark', 'forward');
           return 1;
         }
