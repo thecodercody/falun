@@ -27,7 +27,7 @@ body {
 }
 
 .dark, .light {
-  position: absolute;
+  position: fixed;
   border-radius: 100%;
   left: 50%;
   margin-left: -152px;
@@ -35,7 +35,14 @@ body {
   margin-bottom: -150px;
   height: 303px;
   width: 300px;
-  z-index: 8;
+}
+
+.dark {
+    z-index: 8;
+}
+
+.light {
+    z-index: 7;
 }
 
 .enter {
@@ -210,7 +217,7 @@ body {
 }
 
 #colors {
-  z-index: 6;
+  z-index: 5;
   position: absolute;
   border-radius: 100%;
   left: 50%;
@@ -222,7 +229,7 @@ body {
 }
 
 #dark {
-  z-index: 7;
+  z-index: 6;
   background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
   border-radius: 100%;
@@ -258,11 +265,11 @@ body {
 @keyframes pulseInGlow {
   from {
     transform: scale(1.0);
-    box-shadow: 0px 0px 100px white;
+    box-shadow: 0px 0px 100px 75vh white;
   }
   to {
     transform: scale(0.7);
-    box-shadow: 0px 0px 100px 75vh white;
+    box-shadow: 0px 0px 100px white;
   }
 }
 

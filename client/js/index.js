@@ -72,26 +72,30 @@ var darkLinks = ["img/dark/resized/b1.png",
                    "img/dark/resized/b12.png"
 ];
 
-  var shadeClass;
-  var shade = 'dark';
-  var links = darkLinks;
-  if(shade === 'dark'){
-    shadeClass = darks;
-  } else {
-    shadeClass = lights;
-  }
 
-  $.each(links, function(i, el){
-    $('<img class="' + shade + 'Img">').attr('src', el).appendTo(shadeClass);
+
+  $.each(darkLinks, function(i, el){
+    $('<img class="darkImg">').attr('src', el).appendTo(darks);
   });
+
+  $.each(lightLinks, function(i, el){
+    $('<img class="lightImg">').attr('src', el).appendTo(lights);
+  });  
   
-  $('img', shadeClass).each(function(i, el){
+  $('img', darks).each(function(i, el){
     if (i !== 0){
       $(el).css('display', 'none');
     }
   });
 
-  $('td').append(shadeClass);
+  $('img', lights).each(function(i, el){
+    if (i !== 0){
+      $(el).css('display', 'none');
+    }
+  });
+
+  $('td').append(darks);
+  $('td').append(lights);
 
   var lightCurrent = 0;
   var darkCurrent = 0;
@@ -100,17 +104,19 @@ var darkLinks = ["img/dark/resized/b1.png",
   var images;
   var numLoops;
  
-  if(shade === 'light'){
-    images = $('.lightImg');
-  } else { // if dark
-    images = $('.darkImg');
-  }
+ 
 
 var rotate = function(links, shade, direction) {
 
 
   setTimeout(function(){
+      if(shade === 'light'){
+    images = $('.lightImg');
+  } else { // if dark
+    images = $('.darkImg');
+  }
       if(shade === 'light'){  
+        links = lightLinks;
         if(direction === 'backward') {
           if(lightCurrent < images.length - 1){  
             $(images[lightCurrent]).hide();
@@ -121,8 +127,6 @@ var rotate = function(links, shade, direction) {
             $(images[0]).show();
             lightCurrent = 0;
             lightLoops++;
-            shade = 'light';
-            links = lightLinks;
           }
         } else { // if forward
           if(lightCurrent !== 0){
@@ -134,11 +138,10 @@ var rotate = function(links, shade, direction) {
             $(images[images.length - 1]).show();
             lightCurrent = images.length - 1;
             lightLoops++;
-            shade = 'light';
-            links = lightLinks;
           }
         }
       } else { // if shade === dark
+        links = darkLinks;        
         if(direction === 'backward') {
           if(darkCurrent < images.length - 1){  
             $(images[darkCurrent]).hide();
@@ -149,8 +152,7 @@ var rotate = function(links, shade, direction) {
             $(images[0]).show();
             darkCurrent = 0;
             darkLoops++;
-            shade = 'dark';
-            links = darkLinks;
+            
           }
         } else { // if forward
           if(darkCurrent !== 0){
@@ -162,8 +164,6 @@ var rotate = function(links, shade, direction) {
             $(images[images.length - 1]).show();
             darkCurrent = images.length - 1;
             darkLoops++;
-            shade = 'dark';
-            links = darkLinks;
           }
         }
       }
@@ -208,8 +208,9 @@ var rotate = function(links, shade, direction) {
   }, 100);
 };
 
-rotate(darkLinks, 'dark', 'backward');
 rotate(lightLinks, 'light','backward');
+rotate(darkLinks, 'dark', 'backward');
+
 
 $('.dark').on('click', function(){
   $('.dark').addClass('hidden');
