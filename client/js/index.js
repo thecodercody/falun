@@ -42,7 +42,8 @@ document.getElementById('turningFalunForward').addEventListener('ended',forward,
 */
 
 var darks = $('.dark'),
-   lights = $('.light');
+   lights = $('.light'),
+      zsr = $('.zsr');;
 
 var lightLinks = ["img/bclearsmall/tmp-0.gif",
                    "img/bclearsmall/tmp-1.gif",
@@ -72,6 +73,20 @@ var darkLinks = ["img/dark/resized/b1.png",
                    "img/dark/resized/b12.png"
 ];
 
+var zLinks = ["img/zhenshanren1.png",
+              "img/zhenshanren2.png",
+              "img/zhenshanren3.png",
+              "img/zhenshanren4.png",
+              "img/zhenshanren5.png",
+              "img/zhenshanren6.png",
+              "img/zhenshanren7.png",
+              "img/zhenshanren8.png",
+              "img/zhenshanren9.png"
+];
+
+  $('.background').draggable({ axis: 'y'
+  });
+
 
 
   $.each(darkLinks, function(i, el){
@@ -81,7 +96,11 @@ var darkLinks = ["img/dark/resized/b1.png",
   $.each(lightLinks, function(i, el){
     $('<img class="lightImg">').attr('src', el).appendTo(lights);
   });  
-  
+/*
+  $.each(zLinks, function(i, el) {
+    $('<img class="zImg">').attr('src', el).appendTo(zsr);
+  });
+  */
   $('img', darks).each(function(i, el){
     if (i !== 0){
       $(el).css('display', 'none');
@@ -93,22 +112,53 @@ var darkLinks = ["img/dark/resized/b1.png",
       $(el).css('display', 'none');
     }
   });
+/*
+  $('img', zsr).each(function(i, el){
+    if(i !== 0) {
+      $(el).css('display', 'none');
+    }
+  });
+*/
+  $('#falunArea').append(darks);
+  $('#falunArea').append(lights);
+  //$('#falunArea').append(zsr);
 
-  $('td').append(darks);
-  $('td').append(lights);
 
-  var lightCurrent = 0;
-  var darkCurrent = 0;
-  var lightLoops = 0;
-  var darkLoops = 0;
+  
+  // draggables
+  
+  
+  
+  //  $('.background').backgroundDraggable();
+
   var images;
   var numLoops;
- 
- 
+  var lightLoops = 0;
+  var darkLoops = 0;
+  var lightCurrent = 0;
+  var darkCurrent = 0;
+  var start = true;
+  var rand = 0;
+  var zCur = 0;
+  var zLoops = 0;
+/*
+var rotateZsr = function(){
+  setTimeout(function(){
+      images = $('.zImg');
+      $(images[rand]).hide();
+      rand = Math.floor(Math.random() * 9);
+      $(images[rand]).show();
+  
+     rotateZsr();
+     return 1;
+
+    setTimeout(arguments.callee, 240);
+  }, 240);
+};
+
+rotateZsr(); */
 
 var rotate = function(links, shade, direction) {
-
-
   setTimeout(function(){
       if(shade === 'light'){
     images = $('.lightImg');
@@ -152,7 +202,6 @@ var rotate = function(links, shade, direction) {
             $(images[0]).show();
             darkCurrent = 0;
             darkLoops++;
-            
           }
         } else { // if forward
           if(darkCurrent !== 0){
@@ -175,24 +224,26 @@ var rotate = function(links, shade, direction) {
     
     if(numLoops === 18){
       if(shade === 'light'){
-        lightLoops = 0;
+        lightLoops = -1;
         numLoops = 0;
         if(direction === 'backward'){
-          $('.light').removeClass('enterGlow pulseOutGlow').addClass('pulseInGlow');
+          $('.light').removeClass('enter pulseOut').addClass('pulseIn');
+          $('#enterGlow').removeClass('enterGlow pulseOutGlow').addClass('pulseInGlow');
           rotate(lightLinks, 'light', 'forward');
           return 1;
         } else { // if forward
-          $('.light').removeClass('pulseInGlow').addClass('pulseOutGlow');
+          $('.light').removeClass('pulseIn').addClass('pulseOut');
+          $('#enterGlow').removeClass('pulseInGlow').addClass('pulseOutGlow');
           rotate(lightLinks, 'light', 'backward');
           return 1;
         }
       } else { // if dark
-        darkLoops = 0;
+        darkLoops = -1;
         numLoops = 0;
         if(direction === 'forward'){
           $('.dark').removeClass('pulseIn').addClass('pulseOut');
           $('#colors').removeClass('pulseInColor').addClass('pulseOutColor');
-          $('#dark').removeClass('enter pulseIn').addClass('pulseOut');
+          $('#dark').removeClass('pulseIn').addClass('pulseOut');
           rotate(darkLinks, 'dark', 'backward');
           return 1;
         } else { // if backward
@@ -216,13 +267,20 @@ $('.dark').on('click', function(){
   $('.dark').addClass('hidden');
   $('.light').removeClass('hidden');
   $('#dark').addClass('hidden');
+  $('#enterGlow').removeClass('hidden');
+  $('#bgColor').removeClass('hidden');
 });
 
 $('.light').on('click', function(){
   $('.light').addClass('hidden');
   $('.dark').removeClass('hidden');
-  $('#dark').addClass('hidden');
+  $('#dark').removeClass('hidden');
+  $('#enterGlow').addClass('hidden');
+  $('#bgColor').addClass('hidden');
 });
+
+
+
 
 /*
 $(function() {

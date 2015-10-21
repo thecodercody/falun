@@ -1,13 +1,14 @@
 {
-  "name"         : "ParadiseWorld",
+  "name"         : "TheGreatLaw",
   "version"      : "1.0.0",
-  "description"  : "The Greatness of Falun Dafa",
+  "description"  : "The Great Law of the Cosmos",
   "main"         : "server.js",
   "author"       : "-thecodercody-",
   "dependencies" : {
     "body-parser": "latest",
     "express"    : "latest",
     "jquery"     : "latest",
+    "morgan"     : "latest",
     "method-override": "latest",
     "nodemon"    : "latest"
     }

@@ -1,28 +1,56 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <base href="/">
+  <title>The Great Law</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../favicon/android-icon-192x192.png">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 
-  <title>Paradise World</title>
   <link rel="stylesheet" type="text/css" href="css/styles.css"/>
-  
-  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
+  <!--<script type="text/javascript" src="js/draggable-background.js"></script> -->
+  <script type="text/javascript" src="js/index.js"></script>
 
-  
-  <script src="js/index.js"></script>
-  <script>
-</script>
 </head>
 
 
 <body>
-      <audio autoplay loop="loop" preload="auto">
-      <source src="sound/background.mp3" type="audio/mpeg"/>  
-    </audio> 
-  <div class="content">
+      <audio autoplay loop preload="auto">
+      <source src="sound/JiShi.mp3" type="audio/mp3"/>
+      
 
+    </audio> 
+    
+      <div class="background">
+        <div id="bg"></div>
+      </div>
+    
+  <div class="content">
+    
     <table id="wrapper">
       <tr>
-         <td><!--
+        <td id="falunArea">        
+
+        
+         <!--
           <video autoplay id="turningFalun" preload class="bigEntrance nine" mediagroup="mg1">
             <source src="img/backwardOnce.webm" type="video/webm">
             Your browser does not support the video tag.
@@ -46,17 +74,26 @@
            <img src="img/falunBright300px.gif" alt="" id="turningFalunBright" class="bigEntranceBright hidden"/>
            -->
            <!-- <img id="spinner" src="img/bclear9.gif"/ class=""> -->
-           <div class="dark visible enter"></div>
-           <div id="dark" class="enter"></div>
-           <div id="colors" class="enterColors"></div>
-           <div class="light hidden enterGlow"></div>
-           </td>
+           <!-- <div class="zsr"></div> -->
+               <div class="objects">
+                 <div class="dark enter"></div>
+                 <div id="dark" class="enter"></div>
+                 <div id="colors" class="enterColors"></div>
+                 <div class="light enter hidden"></div>
+                 <div id="enterGlow" class="hidden enterGlow"></div>
+                </div>
+             </td>
+           <td id="intro">
+              <h3>This Law Wheel design is the universe's miniature, and in all other dimensions it, too, has its forms of being and its evolution processes, so I call it a world. - <em><a href="http://www.falundafa.org/eng/eng/zfl_new.html">Zhuan Falun</a></em></h3>
+           </td>   
+          
+        </td>
+           
       </tr>
     </table>
 
     <div class="stars"></div>
     <div class="twinkling"></div>
-    <div class="clouds"></div>
     
   </div>
 </body>

@@ -2,9 +2,100 @@ audio {
   z-index: 7;
 }
 
+#bg {
+  min-width: 100%;
+  min-height: 100%;
+  background: url('../img/layersBlack.png') no-repeat;
+  background-position: center 50%;
+  position: absolute;
+  background-size: cover;
+  z-index: 6;
+}
+
+.background {
+  
+  opacity: 0.7;
+  
+  z-index: 6;
+  position: absolute;
+  min-height: 300vh;
+  min-width: 100%;
+  overflow: hidden;
+  cursor: grab;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: -ms-grab;
+  cursor: -o-grab;
+}
+
+
+
+.hidden {
+  visibility: hidden;
+}
+
+#colors {
+  z-index: 7;
+  position: fixed;
+  border-radius: 100%;
+  left: 50%;
+  margin-left: -152px;
+  bottom: 50%;
+  margin-bottom: -150px;
+  height: 303px;
+  width: 300px;
+}
+
+#dark {
+  z-index: 8;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  border-radius: 100%;
+  left: 50%;
+  margin-left: -152px;
+  bottom: 50%;
+  margin-bottom: -150px;
+  height: 303px;
+  width: 300px;
+}
+/*
+.zsr {
+  z-index: 12;
+  position: fixed;
+}
+*/
+#enterGlow {
+  position: fixed;
+  border-radius: 100%;
+  left: 50%;
+  margin-left: -152px;
+  bottom: 50%;
+  margin-bottom: -150px;
+  height: 303px;
+  width: 300px;
+  transform: translateZ(0);
+  z-index: 5;
+}
+
+h3 {
+  z-index: 6;
+  color: gold;
+  opacity: 0.7;
+  position: relative;  
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(250px);
+}
+
+
+#intro {
+  text-align: center;
+}
+
 
 body {
-  min-height: 100vh;
+  min-height: 300vh;
   min-width: 100vw;
   overflow: hidden;
 }
@@ -16,12 +107,16 @@ body {
 
 }
 
+p {
+  text-align: center;
+}
+
 #wrapper {
   height: 100%;
   width: 100%;
 }
 
-#wrapper td {
+#falunArea {
    vertical-align: middle;
    text-align: center;
 }
@@ -35,23 +130,28 @@ body {
   margin-bottom: -150px;
   height: 303px;
   width: 300px;
-}
-
-.dark {
-    z-index: 8;
-}
-
-.light {
-    z-index: 7;
+  transform: translateZ(0);
+  z-index: 9;
 }
 
 .enter {
   animation-name: enter;
+  -webkit-animation-name: enter;
+  -moz-animation-name: enter;
+  -ms-animation-name: enter;
+  -o-animation-name: enter;
+  
   animation-duration: 21.7s;
-  animation-timing-function: ease-out;  
-  -webkit-animation-timing-function: ease-out;  
+  -webkit-animation-duration: 21.7s;
+  -moz-animation-duration: 21.7s;
+  -ms-animation-duration: 21.7s;
+  -o-animation-duration: 21.7s;
 
-  visibility: visible !important;     
+  animation-timing-function: ease-out;  
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
 }
 
 @keyframes enter {
@@ -61,7 +161,6 @@ body {
   }
   23.3% {
     transform: scale(1.03) translateX(2%) translateY(-2%);
-    opacity: 1;
   }
   30% {
     transform: scale(1.0)  translateX(0%) translateY(0%);    
@@ -72,24 +171,105 @@ body {
   }   
 }
 
+@-webkit-keyframes enter {
+  0% {
+    -webkit-transform: scale(0.3)  translateX(-30%) translateY(30%);
+    opacity: 0.2;
+  }
+  23.3% {
+    -webkit-transform: scale(1.03) translateX(2%) translateY(-2%);
+  }
+  30% {
+    -webkit-transform: scale(1.0)  translateX(0%) translateY(0%);    
+    opacity: 1;   
+  } 
+  100% {
+    -webkit-transform: scale(1.0)  translateX(0%) translateY(0%);    
+  }   
+}
+
+@-moz-keyframes enter {
+  0% {
+    -moz-transform: scale(0.3)  translateX(-30%) translateY(30%);
+    opacity: 0.2;
+  }
+  23.3% {
+    -moz-transform: scale(1.03) translateX(2%) translateY(-2%);
+  }
+  30% {
+    -moz-transform: scale(1.0)  translateX(0%) translateY(0%);    
+    opacity: 1;   
+  } 
+  100% {
+    -moz-transform: scale(1.0)  translateX(0%) translateY(0%);    
+  }   
+}
+
+@-ms-keyframes enter {
+  0% {
+    -ms-transform: scale(0.3)  translateX(-30%) translateY(30%);
+    opacity: 0.2;
+  }
+  23.3% {
+    -ms-transform: scale(1.03) translateX(2%) translateY(-2%);
+  }
+  30% {
+    -ms-transform: scale(1.0)  translateX(0%) translateY(0%);    
+    opacity: 1;   
+  } 
+  100% {
+    -ms-transform: scale(1.0)  translateX(0%) translateY(0%);    
+  }   
+}
+
+@-o-keyframes enter {
+  0% {
+    -o-transform: scale(0.3)  translateX(-30%) translateY(30%);
+    opacity: 0.2;
+  }
+  23.3% {
+    -o-transform: scale(1.03) translateX(2%) translateY(-2%);
+  }
+  30% {
+    -o-transform: scale(1.0)  translateX(0%) translateY(0%);    
+    opacity: 1;   
+  } 
+  100% {
+    -o-transform: scale(1.0)  translateX(0%) translateY(0%);    
+  }   
+}
+
 .enterGlow {
   animation-name: enterGlow;
+  -webkit-animation-name: enterGlow;
+  -moz-animation-name: enterGlow;
+  -ms-animation-name: enterGlow;
+  -o-animation-name: enterGlow;
+
   animation-duration: 21.7s;
-  animation-timing-function: ease-out;  
-  -webkit-animation-timing-function: ease-out;       
+  -webkit-animation-duration: 21.7s;
+  -moz-animation-duration: 21.7s;
+  -ms-animation-duration: 21.7s;
+  -o-animation-duration: 21.7s;
+
+  animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  
+  animation-fill-mode: forwards;  
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
 }
 
 @keyframes enterGlow {
-  from {
-    box-shadow: 0px 0px 89px white;
-  }
-  to {
-    box-shadow: 0px 0px 89px 72vh white;
-  }
-
   0% {
     transform: scale(0.3)  translateX(-30%) translateY(30%);
     opacity: 0.2;
+    box-shadow: 0px 0px 89px rgba(255, 255, 255, 0.5);
   }
   23.3% {
     transform: scale(1.03) translateX(2%) translateY(-2%);
@@ -100,21 +280,102 @@ body {
     opacity: 1;   
   } 
   100% {
+    transform: scale(1.0)  translateX(0%) translateY(0%);
+    box-shadow: 0px 0px 89px 75vh white;
+  }   
+}
+
+@-webkit-keyframes enterGlow {
+  0% {
+    -webkit-transform: scale(0.3)  translateX(-30%) translateY(30%);
+    opacity: 0.2;
+    box-shadow: 0px 0px 89px rgba(255, 255, 255, 0.5);
+  }
+  23.3% {
+    -webkit-transform: scale(1.03) translateX(2%) translateY(-2%);
     opacity: 1;
+  }
+  30% {
+    -webkit-transform: scale(1.0)  translateX(0%) translateY(0%);     
+    opacity: 1;   
+  } 
+  100% {
+    -webkit-transform: scale(1.0)  translateX(0%) translateY(0%);
+    box-shadow: 0px 0px 89px 75vh white;
+  }   
+}
+
+@-moz-keyframes enterGlow {
+  0% {
+    -moz-transform: scale(0.3)  translateX(-30%) translateY(30%);
+    opacity: 0.2;
+    box-shadow: 0px 0px 89px rgba(255, 255, 255, 0.5);
+  }
+  23.3% {
+    -moz-transform: scale(1.03) translateX(2%) translateY(-2%);
+    opacity: 1;
+  }
+  30% {
+    -moz-transform: scale(1.0)  translateX(0%) translateY(0%);     
+    opacity: 1;   
+  } 
+  100% {
+    -moz-transform: scale(1.0)  translateX(0%) translateY(0%);
+    box-shadow: 0px 0px 89px 75vh white;
+  }   
+}
+
+@-o-keyframes enterGlow {
+  0% {
+    -o-transform: scale(0.3)  translateX(-30%) translateY(30%);
+    opacity: 0.2;
+    box-shadow: 0px 0px 89px rgba(255, 255, 255, 0.5);
+  }
+  23.3% {
+    -o-transform: scale(1.03) translateX(2%) translateY(-2%);
+    opacity: 1;
+  }
+  30% {
+    -o-transform: scale(1.0)  translateX(0%) translateY(0%);     
+    opacity: 1;   
+  } 
+  100% {
+    -o-transform: scale(1.0)  translateX(0%) translateY(0%);
+    box-shadow: 0px 0px 89px 75vh white;
   }   
 }
 
 .enterColors{
   animation-name: enterColors;
+  -webkit-animation-name: enterColors;
+  -moz-animation-name: enterColors;
+  -ms-animation-name: enterColors;
+  -o-animation-name: enterColors;
+
   animation-duration: 21.7s;
-  animation-timing-function: ease-out;  
-  -webkit-animation-timing-function: ease-out;       
+  -webkit-animation-duration: 21.7s;
+  -moz-animation-duration: 21.7s;
+  -ms-animation-duration: 21.7s;
+  -o-animation-duration: 21.7s;
+
+  animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  
+  animation-fill-mode: forwards;     
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
 }
 
 @keyframes enterColors {
   0% {
     transform: scale(0.3)  translateX(-30%) translateY(30%);
     background-color: red;
+    opacity: 0.2;
   }
   3.3% {
     background-color: orange; 
@@ -144,6 +405,7 @@ body {
   30% {
     transform: scale(1.0)  translateX(0%) translateY(0%);
     background-color: transparent;
+    opacity: 1.0;
   } 
   33.3% {
     background-color: red;
@@ -208,43 +470,447 @@ body {
   } 
   100% {
     background-color: red;
+    transform: scale(1.0)  translateX(0%) translateY(0%);
+  }   
+}
+
+@-webkit-keyframes enterColors {
+  0% {
+    -webkit-transform: scale(0.3)  translateX(-30%) translateY(30%);
+    background-color: red;
+    opacity: 0.2;
+  }
+  3.3% {
+    background-color: orange; 
+  }
+  6.6%{
+    background-color: yellow;
+  }
+  10% {
+    background-color: #00ff00;
+  }
+  13.3%{
+    background-color: #00ffff;
+  }
+  16.6% {
+    background-color: #0000ff;
+  }
+  20% {
+    background-color: #9900ff;
+  } 
+  23.3% {
+    -webkit-transform: scale(1.03) translateX(2%) translateY(-2%);
+    background-color: #ffccff;
+  }
+  26.7% {
+   background-color: #ffffff;
+  }
+  30% {
+    -webkit-transform: scale(1.0)  translateX(0%) translateY(0%);
+    background-color: transparent;
+    opacity: 1.0;
+  } 
+  33.3% {
+    background-color: red;
+  }
+  36.6% {
+    background-color: orange; 
+  }
+  40%{
+    background-color: yellow;
+  }
+  43.3% {
+    background-color: #00ff00;
+  }
+  46.7%{
+    background-color: #00ffff;
+  }
+  50% {
+    background-color: #0000ff;
+  }
+  53.3% {
+    background-color: #9900ff;
+  } 
+  56.6% {
+    background-color: #ffccff;
+  }
+  60% {
+   background-color: #ffffff;
+  }
+  63.3% {
+    background-color: transparent;
+  } 
+  66.7% {
+    background-color: red;
+  }
+  70% {
+    background-color: orange;
+    opacity: 1; 
+  }
+  73.3%{
+    background-color: yellow;
+  }
+  76.6% {
+    background-color: #00ff00;
+  }
+  80%{
+    background-color: #00ffff;
+  }
+  83.3% {
+    background-color: #0000ff;
+  }
+  86.7% {
+    background-color: #9900ff;
+  } 
+  90% {
+    background-color: #ffccff;
+  }
+  93.3% {
+   background-color: #ffffff;
+  }
+  96.6% {
+    background-color: transparent;
+  } 
+  100% {
+    background-color: red;
+    -webkit-transform: scale(1.0)  translateX(0%) translateY(0%);
+  }   
+}
+
+@-moz-keyframes enterColors {
+  0% {
+    -moz-transform: scale(0.3)  translateX(-30%) translateY(30%);
+    background-color: red;
+    opacity: 0.2;
+  }
+  3.3% {
+    background-color: orange; 
+  }
+  6.6%{
+    background-color: yellow;
+  }
+  10% {
+    background-color: #00ff00;
+  }
+  13.3%{
+    background-color: #00ffff;
+  }
+  16.6% {
+    background-color: #0000ff;
+  }
+  20% {
+    background-color: #9900ff;
+  } 
+  23.3% {
+    -moz-transform: scale(1.03) translateX(2%) translateY(-2%);
+    background-color: #ffccff;
+  }
+  26.7% {
+   background-color: #ffffff;
+  }
+  30% {
+    -moz-transform: scale(1.0)  translateX(0%) translateY(0%);
+    background-color: transparent;
+    opacity: 1.0;
+  } 
+  33.3% {
+    background-color: red;
+  }
+  36.6% {
+    background-color: orange; 
+  }
+  40%{
+    background-color: yellow;
+  }
+  43.3% {
+    background-color: #00ff00;
+  }
+  46.7%{
+    background-color: #00ffff;
+  }
+  50% {
+    background-color: #0000ff;
+  }
+  53.3% {
+    background-color: #9900ff;
+  } 
+  56.6% {
+    background-color: #ffccff;
+  }
+  60% {
+   background-color: #ffffff;
+  }
+  63.3% {
+    background-color: transparent;
+  } 
+  66.7% {
+    background-color: red;
+  }
+  70% {
+    background-color: orange;
+    opacity: 1; 
+  }
+  73.3%{
+    background-color: yellow;
+  }
+  76.6% {
+    background-color: #00ff00;
+  }
+  80%{
+    background-color: #00ffff;
+  }
+  83.3% {
+    background-color: #0000ff;
+  }
+  86.7% {
+    background-color: #9900ff;
+  } 
+  90% {
+    background-color: #ffccff;
+  }
+  93.3% {
+   background-color: #ffffff;
+  }
+  96.6% {
+    background-color: transparent;
+  } 
+  100% {
+    background-color: red;
+    -moz-transform: scale(1.0)  translateX(0%) translateY(0%);
+  }   
+}
+
+@-ms-keyframes enterColors {
+  0% {
+    -ms-transform: scale(0.3)  translateX(-30%) translateY(30%);
+    background-color: red;
+    opacity: 0.2;
+  }
+  3.3% {
+    background-color: orange; 
+  }
+  6.6%{
+    background-color: yellow;
+  }
+  10% {
+    background-color: #00ff00;
+  }
+  13.3%{
+    background-color: #00ffff;
+  }
+  16.6% {
+    background-color: #0000ff;
+  }
+  20% {
+    background-color: #9900ff;
+  } 
+  23.3% {
+    -ms-transform: scale(1.03) translateX(2%) translateY(-2%);
+    background-color: #ffccff;
+  }
+  26.7% {
+   background-color: #ffffff;
+  }
+  30% {
+    -ms-transform: scale(1.0)  translateX(0%) translateY(0%);
+    background-color: transparent;
+    opacity: 1.0;
+  } 
+  33.3% {
+    background-color: red;
+  }
+  36.6% {
+    background-color: orange; 
+  }
+  40%{
+    background-color: yellow;
+  }
+  43.3% {
+    background-color: #00ff00;
+  }
+  46.7%{
+    background-color: #00ffff;
+  }
+  50% {
+    background-color: #0000ff;
+  }
+  53.3% {
+    background-color: #9900ff;
+  } 
+  56.6% {
+    background-color: #ffccff;
+  }
+  60% {
+   background-color: #ffffff;
+  }
+  63.3% {
+    background-color: transparent;
+  } 
+  66.7% {
+    background-color: red;
+  }
+  70% {
+    background-color: orange;
+    opacity: 1; 
+  }
+  73.3%{
+    background-color: yellow;
+  }
+  76.6% {
+    background-color: #00ff00;
+  }
+  80%{
+    background-color: #00ffff;
+  }
+  83.3% {
+    background-color: #0000ff;
+  }
+  86.7% {
+    background-color: #9900ff;
+  } 
+  90% {
+    background-color: #ffccff;
+  }
+  93.3% {
+   background-color: #ffffff;
+  }
+  96.6% {
+    background-color: transparent;
+  } 
+  100% {
+    background-color: red;
+    -ms-transform: scale(1.0)  translateX(0%) translateY(0%);
+  }   
+}
+
+@-o-keyframes enterColors {
+  0% {
+    -o-transform: scale(0.3)  translateX(-30%) translateY(30%);
+    background-color: red;
+    opacity: 0.2;
+  }
+  3.3% {
+    background-color: orange; 
+  }
+  6.6%{
+    background-color: yellow;
+  }
+  10% {
+    background-color: #00ff00;
+  }
+  13.3%{
+    background-color: #00ffff;
+  }
+  16.6% {
+    background-color: #0000ff;
+  }
+  20% {
+    background-color: #9900ff;
+  } 
+  23.3% {
+    -o-transform: scale(1.03) translateX(2%) translateY(-2%);
+    background-color: #ffccff;
+  }
+  26.7% {
+   background-color: #ffffff;
+  }
+  30% {
+    -o-transform: scale(1.0)  translateX(0%) translateY(0%);
+    background-color: transparent;
+    opacity: 1.0;
+  } 
+  33.3% {
+    background-color: red;
+  }
+  36.6% {
+    background-color: orange; 
+  }
+  40%{
+    background-color: yellow;
+  }
+  43.3% {
+    background-color: #00ff00;
+  }
+  46.7%{
+    background-color: #00ffff;
+  }
+  50% {
+    background-color: #0000ff;
+  }
+  53.3% {
+    background-color: #9900ff;
+  } 
+  56.6% {
+    background-color: #ffccff;
+  }
+  60% {
+   background-color: #ffffff;
+  }
+  63.3% {
+    background-color: transparent;
+  } 
+  66.7% {
+    background-color: red;
+  }
+  70% {
+    background-color: orange;
+    opacity: 1; 
+  }
+  73.3%{
+    background-color: yellow;
+  }
+  76.6% {
+    background-color: #00ff00;
+  }
+  80%{
+    background-color: #00ffff;
+  }
+  83.3% {
+    background-color: #0000ff;
+  }
+  86.7% {
+    background-color: #9900ff;
+  } 
+  90% {
+    background-color: #ffccff;
+  }
+  93.3% {
+   background-color: #ffffff;
+  }
+  96.6% {
+    background-color: transparent;
+  } 
+  100% {
+    background-color: red;
+    -o-transform: scale(1.0)  translateX(0%) translateY(0%);
   }   
 }
 
 
-.hidden {
-  visibility: hidden;
-}
-
-#colors {
-  z-index: 5;
-  position: absolute;
-  border-radius: 100%;
-  left: 50%;
-  margin-left: -152px;
-  bottom: 50%;
-  margin-bottom: -150px;
-  height: 303px;
-  width: 300px;
-}
-
-#dark {
-  z-index: 6;
-  background-color: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  border-radius: 100%;
-  left: 50%;
-  margin-left: -152px;
-  bottom: 50%;
-  margin-bottom: -150px;
-  height: 303px;
-  width: 300px;
-}
-
 .pulseIn {
   animation-name: pulseIn;
+  -webkit-animation-name: pulseIn;
+  -moz-animation-name: pulseIn;
+  -ms-animation-name: pulseIn;
+  -o-animation-name: pulseIn;
+  
   animation-duration: 21.7s;
+  -webkit-animation-duration: 21.7s;
+  -moz-animation-duration: 21.7s;
+  -ms-animation-duration: 21.7s;
+  -o-animation-duration: 21.7s;
+
   animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
 }
 
 @keyframes pulseIn {
@@ -252,42 +918,157 @@ body {
     transform: scale(1.0);
   }
   to {
-    transform: scale(0.7);
+    transform: scale(0.3);
+  }
+}
+
+@-webkit-keyframes pulseIn {
+  from {
+    -webkit-transform: scale(1.0);
+  }
+  to {
+    -webkit-transform: scale(0.3);
+  }
+}
+
+@-moz-keyframes pulseIn {
+  from {
+    -moz-transform: scale(1.0);
+  }
+  to {
+    -moz-transform: scale(0.3);
+  }
+}
+
+@-ms-keyframes pulseIn {
+  from {
+    -ms-transform: scale(1.0);
+  }
+  to {
+    -ms-transform: scale(0.3);
+  }
+}
+
+@-o-keyframes pulseIn {
+  from {
+    -o-transform: scale(1.0);
+  }
+  to {
+    -o-transform: scale(0.3);
   }
 }
 
 .pulseInGlow {
   animation-name: pulseInGlow;
+  -webkit-animation-name: pulseInGlow;
+  -moz-animation-name: pulseInGlow;
+  -ms-animation-name: pulseInGlow;
+  -o-animation-name: pulseInGlow;
+
   animation-duration: 21.7s;
+  -webkit-animation-duration: 21.7s;
+  -moz-animation-duration: 21.7s;
+  -ms-animation-duration: 21.7s;
+  -o-animation-duration: 21.7s;
+
   animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
 }
 
 @keyframes pulseInGlow {
   from {
     transform: scale(1.0);
-    box-shadow: 0px 0px 100px 75vh white;
+    box-shadow: 0px 0px 89px 75vh white;
   }
   to {
-    transform: scale(0.7);
-    box-shadow: 0px 0px 100px white;
+    transform: scale(0.3);
+    box-shadow: 0px 0px 89px rgba(255, 255, 255, 0.5);
+  }
+}
+
+@-webkit-keyframes pulseInGlow {
+  from {
+    -webkit-transform: scale(1.0);
+    box-shadow: 0px 0px 89px 75vh white;
+  }
+  to {
+    -webkit-transform: scale(0.3);
+    box-shadow: 0px 0px 89px rgba(255, 255, 255, 0.5);
+  }
+}
+
+@-moz-keyframes pulseInGlow {
+  from {
+    -moz-transform: scale(1.0);
+    box-shadow: 0px 0px 89px 75vh white;
+  }
+  to {
+    -moz-transform: scale(0.3);
+    box-shadow: 0px 0px 89px rgba(255, 255, 255, 0.5);
+  }
+}
+
+@-ms-keyframes pulseInGlow {
+  from {
+    -ms-transform: scale(1.0);
+    box-shadow: 0px 0px 89px 75vh white;
+  }
+  to {
+    -ms-transform: scale(0.3);
+    box-shadow: 0px 0px 89px rgba(255, 255, 255, 0.5);
+  }
+}
+
+@-o-keyframes pulseInGlow {
+  from {
+    -o-transform: scale(1.0);
+    box-shadow: 0px 0px 89px 75vh white;
+  }
+  to {
+    -o-transform: scale(0.3);
+    box-shadow: 0px 0px 89px rgba(255, 255, 255, 0.5);
   }
 }
 
 .pulseInColor {
   animation-name: pulseInColor;
+  -webkit-animation-name: pulseInColor;
+  -moz-animation-name: pulseInColor;
+  -ms-animation-name: pulseInColor;
+  -o-animation-name: pulseInColor;
+
   animation-duration: 21.7s;
+  -webkit-animation-duration: 21.7s;
+  -moz-animation-duration: 21.7s;
+  -ms-animation-duration: 21.7s;
+  -o-animation-duration: 21.7s;
+
   animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
 }
 
 @keyframes pulseInColor {
-  from {
-    transform: scale(1.0);
-  }
-  to {
-    transform: scale(0.7);
-  }
   0% {
     background-color: red;
+    transform: scale(1.0);
   }
   3.3% {
     background-color: orange; 
@@ -378,56 +1159,586 @@ body {
   } 
   100% {
     background-color: red;
+    transform: scale(0.3);
+  }
+}
+
+@-webkit-keyframes pulseInColor {
+  0% {
+    background-color: red;
+    -webkit-transform: scale(1.0);
+  }
+  3.3% {
+    background-color: orange; 
+  }
+  6.6%{
+    background-color: yellow;
+  }
+  10% {
+    background-color: #00ff00;
+  }
+  13.3%{
+    background-color: #00ffff;
+  }
+  16.6% {
+    background-color: #0000ff;
+  }
+  20% {
+    background-color: #9900ff;
+  } 
+  23.3% {
+    background-color: #ffccff;
+  }
+  26.7% {
+   background-color: #ffffff;
+  }
+  30% {
+    background-color: transparent;
+  } 
+  33.3% {
+    background-color: red;
+  }
+  36.6% {
+    background-color: orange; 
+  }
+  40%{
+    background-color: yellow;
+  }
+  43.3% {
+    background-color: #00ff00;
+  }
+  46.7%{
+    background-color: #00ffff;
+  }
+  50% {
+    background-color: #0000ff;
+  }
+  53.3% {
+    background-color: #9900ff;
+  } 
+  56.6% {
+    background-color: #ffccff;
+  }
+  60% {
+   background-color: #ffffff;
+  }
+  63.3% {
+    background-color: transparent;
+  } 
+  66.7% {
+    background-color: red;
+  }
+  70% {
+    background-color: orange; 
+  }
+  73.3%{
+    background-color: yellow;
+  }
+  76.6% {
+    background-color: #00ff00;
+  }
+  80%{
+    background-color: #00ffff;
+  }
+  83.3% {
+    background-color: #0000ff;
+  }
+  86.7% {
+    background-color: #9900ff;
+  } 
+  90% {
+    background-color: #ffccff;
+  }
+  93.3% {
+   background-color: #ffffff;
+  }
+  96.6% {
+    background-color: transparent;
+  } 
+  100% {
+    background-color: red;
+    -webkit-transform: scale(0.3);
+  }
+}
+
+@-moz-keyframes pulseInColor {
+  0% {
+    background-color: red;
+    -moz-transform: scale(1.0);
+  }
+  3.3% {
+    background-color: orange; 
+  }
+  6.6%{
+    background-color: yellow;
+  }
+  10% {
+    background-color: #00ff00;
+  }
+  13.3%{
+    background-color: #00ffff;
+  }
+  16.6% {
+    background-color: #0000ff;
+  }
+  20% {
+    background-color: #9900ff;
+  } 
+  23.3% {
+    background-color: #ffccff;
+  }
+  26.7% {
+   background-color: #ffffff;
+  }
+  30% {
+    background-color: transparent;
+  } 
+  33.3% {
+    background-color: red;
+  }
+  36.6% {
+    background-color: orange; 
+  }
+  40%{
+    background-color: yellow;
+  }
+  43.3% {
+    background-color: #00ff00;
+  }
+  46.7%{
+    background-color: #00ffff;
+  }
+  50% {
+    background-color: #0000ff;
+  }
+  53.3% {
+    background-color: #9900ff;
+  } 
+  56.6% {
+    background-color: #ffccff;
+  }
+  60% {
+   background-color: #ffffff;
+  }
+  63.3% {
+    background-color: transparent;
+  } 
+  66.7% {
+    background-color: red;
+  }
+  70% {
+    background-color: orange; 
+  }
+  73.3%{
+    background-color: yellow;
+  }
+  76.6% {
+    background-color: #00ff00;
+  }
+  80%{
+    background-color: #00ffff;
+  }
+  83.3% {
+    background-color: #0000ff;
+  }
+  86.7% {
+    background-color: #9900ff;
+  } 
+  90% {
+    background-color: #ffccff;
+  }
+  93.3% {
+   background-color: #ffffff;
+  }
+  96.6% {
+    background-color: transparent;
+  } 
+  100% {
+    background-color: red;
+    -moz-transform: scale(0.3);
+  }
+}
+
+@-ms-keyframes pulseInColor {
+  0% {
+    background-color: red;
+    -ms-transform: scale(1.0);
+  }
+  3.3% {
+    background-color: orange; 
+  }
+  6.6%{
+    background-color: yellow;
+  }
+  10% {
+    background-color: #00ff00;
+  }
+  13.3%{
+    background-color: #00ffff;
+  }
+  16.6% {
+    background-color: #0000ff;
+  }
+  20% {
+    background-color: #9900ff;
+  } 
+  23.3% {
+    background-color: #ffccff;
+  }
+  26.7% {
+   background-color: #ffffff;
+  }
+  30% {
+    background-color: transparent;
+  } 
+  33.3% {
+    background-color: red;
+  }
+  36.6% {
+    background-color: orange; 
+  }
+  40%{
+    background-color: yellow;
+  }
+  43.3% {
+    background-color: #00ff00;
+  }
+  46.7%{
+    background-color: #00ffff;
+  }
+  50% {
+    background-color: #0000ff;
+  }
+  53.3% {
+    background-color: #9900ff;
+  } 
+  56.6% {
+    background-color: #ffccff;
+  }
+  60% {
+   background-color: #ffffff;
+  }
+  63.3% {
+    background-color: transparent;
+  } 
+  66.7% {
+    background-color: red;
+  }
+  70% {
+    background-color: orange; 
+  }
+  73.3%{
+    background-color: yellow;
+  }
+  76.6% {
+    background-color: #00ff00;
+  }
+  80%{
+    background-color: #00ffff;
+  }
+  83.3% {
+    background-color: #0000ff;
+  }
+  86.7% {
+    background-color: #9900ff;
+  } 
+  90% {
+    background-color: #ffccff;
+  }
+  93.3% {
+   background-color: #ffffff;
+  }
+  96.6% {
+    background-color: transparent;
+  } 
+  100% {
+    background-color: red;
+    -ms-transform: scale(0.3);
+  }
+}
+
+@-o-keyframes pulseInColor {
+  0% {
+    background-color: red;
+    -o-transform: scale(1.0);
+  }
+  3.3% {
+    background-color: orange; 
+  }
+  6.6%{
+    background-color: yellow;
+  }
+  10% {
+    background-color: #00ff00;
+  }
+  13.3%{
+    background-color: #00ffff;
+  }
+  16.6% {
+    background-color: #0000ff;
+  }
+  20% {
+    background-color: #9900ff;
+  } 
+  23.3% {
+    background-color: #ffccff;
+  }
+  26.7% {
+   background-color: #ffffff;
+  }
+  30% {
+    background-color: transparent;
+  } 
+  33.3% {
+    background-color: red;
+  }
+  36.6% {
+    background-color: orange; 
+  }
+  40%{
+    background-color: yellow;
+  }
+  43.3% {
+    background-color: #00ff00;
+  }
+  46.7%{
+    background-color: #00ffff;
+  }
+  50% {
+    background-color: #0000ff;
+  }
+  53.3% {
+    background-color: #9900ff;
+  } 
+  56.6% {
+    background-color: #ffccff;
+  }
+  60% {
+   background-color: #ffffff;
+  }
+  63.3% {
+    background-color: transparent;
+  } 
+  66.7% {
+    background-color: red;
+  }
+  70% {
+    background-color: orange; 
+  }
+  73.3%{
+    background-color: yellow;
+  }
+  76.6% {
+    background-color: #00ff00;
+  }
+  80%{
+    background-color: #00ffff;
+  }
+  83.3% {
+    background-color: #0000ff;
+  }
+  86.7% {
+    background-color: #9900ff;
+  } 
+  90% {
+    background-color: #ffccff;
+  }
+  93.3% {
+   background-color: #ffffff;
+  }
+  96.6% {
+    background-color: transparent;
+  } 
+  100% {
+    background-color: red;
+    -o-transform: scale(0.3);
   }
 }
 
 .pulseOut {
   animation-name: pulseOut;
+  -webkit-animation-name: pulseOut;
+  -moz-animation-name: pulseOut;
+  -ms-animation-name: pulseOut;
+  -o-animation-name: pulseOut;
+
   animation-duration: 21.7s;
+  -webkit-animation-duration: 21.7s;
+  -moz-animation-duration: 21.7s;
+  -ms-animation-duration: 21.7s;
+  -o-animation-duration: 21.7s;
+
   animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
 }
 
 @keyframes pulseOut {
   from {
-    transform: scale(0.7);
+    transform: scale(0.3);
   }
   to {
     transform: scale(1.0);
+  }
+}
+
+@-webkit-keyframes pulseOut {
+  from {
+    -webkit-transform: scale(0.3);
+  }
+  to {
+    -webkit-transform: scale(1.0);
+  }
+}
+
+@-moz-keyframes pulseOut {
+  from {
+    -moz-transform: scale(0.3);
+  }
+  to {
+    -moz-transform: scale(1.0);
+  }
+}
+
+@-ms-keyframes pulseOut {
+  from {
+    -ms-transform: scale(0.3);
+  }
+  to {
+    -ms-transform: scale(1.0);
+  }
+}
+
+@-o-keyframes pulseOut {
+  from {
+    -o-transform: scale(0.3);
+  }
+  to {
+    -o-transform: scale(1.0);
   }
 }
 
 .pulseOutGlow {
   animation-name: pulseOutGlow;
+  -webkit-animation-name: pulseOutGlow;
+  -moz-animation-name: pulseOutGlow;
+  -ms-animation-name: pulseOutGlow;
+  -o-animation-name: pulseOutGlow;
+
   animation-duration: 21.7s;
+  -webkit-animation-duration: 21.7s;
+  -moz-animation-duration: 21.7s;
+  -ms-animation-duration: 21.7s;
+  -o-animation-duration: 21.7s;
+
   animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+
 }
 
 @keyframes pulseOutGlow {
   from {
-    transform: scale(0.7);
-    box-shadow: 0px 0px 100px white;
+    transform: scale(0.3);
+    box-shadow: 0px 0px 89px rgba(255, 255, 255, 0.5);
   }
   to {
     transform: scale(1.0);
-    box-shadow: 0px 0px 100px 75vh white;
+    box-shadow: 0px 0px 89px 75vh #ffffff;
+  }
+}
+
+@-webkit-keyframes pulseOutGlow {
+  from {
+    -webkit-transform: scale(0.3);
+    box-shadow: 0px 0px 89px rgba(255, 255, 255, 0.5);
+  }
+  to {
+    -webkit-transform: scale(1.0);
+    box-shadow: 0px 0px 89px 75vh #ffffff;
+  }
+}
+
+@-moz-keyframes pulseOutGlow {
+  from {
+    -moz-transform: scale(0.3);
+    box-shadow: 0px 0px 89px rgba(255, 255, 255, 0.5);
+  }
+  to {
+    -moz-transform: scale(1.0);
+    box-shadow: 0px 0px 89px 75vh #ffffff;
+  }
+}
+
+@-ms-keyframes pulseOutGlow {
+  from {
+    -ms-transform: scale(0.3);
+    box-shadow: 0px 0px 89px rgba(255, 255, 255, 0.5);
+  }
+  to {
+    -ms-transform: scale(1.0);
+    box-shadow: 0px 0px 89px 75vh #ffffff;
+  }
+}
+
+@-o-keyframes pulseOutGlow {
+  from {
+    -o-transform: scale(0.3);
+    box-shadow: 0px 0px 89px rgba(255, 255, 255, 0.5);
+  }
+  to {
+    -o-transform: scale(1.0);
+    box-shadow: 0px 0px 89px 75vh #ffffff;
   }
 }
 
 .pulseOutColor {
   animation-name: pulseOutColor;
+  -webkit-animation-name: pulseOutColor;
+  -moz-animation-name: pulseOutColor;
+  -ms-animation-name: pulseOutColor;
+  -o-animation-name: pulseOutColor;
+
   animation-duration: 21.7s;
+  -webkit-animation-duration: 21.7s;
+  -moz-animation-duration: 21.7s;
+  -ms-animation-duration: 21.7s;
+  -o-animation-duration: 21.7s;
+
   animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+
 }
 
 @keyframes pulseOutColor {
-  from {
-    transform: scale(0.7);
-  }
-  to {
-    transform: scale(1.0);
-  }
   0% {
     background-color: red;
+    transform: scale(0.3);
   }
   3.3% {
     background-color: orange; 
@@ -518,635 +1829,404 @@ body {
   } 
   100% {
     background-color: red;
-  }
-}
-
-
-
-
-
-
-
-
-/*
-
-.images {
-  position: absolute;
-  border-radius: 100%;
-  left: 50%;
-  margin-left: -152px;
-  bottom: 50%;
-  margin-bottom: -150px;
-}
-
-.images2 {
-  position: absolute;
-  border-radius: 100%;
-  left: 50%;
-  margin-left: -152px;
-  bottom: 50%;
-  margin-bottom: -150px;
-}
-
-
-
-#dark {
-  animation-name:bigEntranceNoColor;
-  animation-duration: 21.6s;
-  border-radius: 100%;
-  position: fixed;
-  height: 300px;
-  width: 304px;
-  left: 50%;
-  margin-left: -152px;
-  bottom: 50%;
-  margin-bottom: -150px;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-#colors {
-  animation-name: bigEntranceColor;
-  animation-duration: 21.6s;
-  border-radius: 100%;
-  position: fixed;
-  height: 300px;
-  width: 304px;
-  left: 50%;
-  margin-left: -152px;
-  bottom: 50%;
-  margin-bottom: -150px;
-}
-
-
-#turningFalun {
-  border-radius: 100%;
-  position: fixed;
-  height: 300px;
-  width: 304px;
-  left: 50%;
-  margin-left: -152px;
-  bottom: 50%;
-  margin-bottom: -150px;
-}
-
-.five {
-  z-index: 5;
-}
-
-.six {
-  z-index: 6;
-}
-
-.seven {
-  z-index: 7;
-}
-
-.eight {
-  z-index: 8;
-}
-
-.nine {
-  z-index: 9;
-}
-
-.ten {
-  z-index: 10;
-}
-
-#turningFalunForward {
-  position: fixed;
-  height: 300px;
-  width: 304px;
-  left: 50%;
-  margin-left: -152px;
-  bottom: 50%;
-  margin-bottom: -150px;
-}
-
-#turningFalunBright {
-  border-radius: 100%;
-  position: fixed;
-  height: 300px;
-  width: 304px;
-  left: 50%;
-  margin-left: -152px;
-  bottom: 50%;
-  margin-bottom: -150px;
-}
-
-
-
-.brightOut {
-  box-shadow: 0px 0px 89px 75vh #ffffff;
-  transition: all 21.6s linear;
-}
-
-.brightIn {
-  box-shadow: 0px 0px 89px 0px rgba(255, 255, 255, 0.5);
-  transition: all 21.6s linear;
-}
-
-.bigEntranceColor{
-  animation-name: bigEntranceColor;
-  -webkit-animation-name: bigEntranceColor;  
-
-  animation-duration: 21.6s; 
-  -webkit-animation-duration: 21.6s;
-
-  animation-timing-function: ease-out;  
-  -webkit-animation-timing-function: ease-out;  
-
-  visibility: visible !important;     
-}
-
-@keyframes bigEntranceColor {
-
-  0% {
-    transform: scale(0.3)  translateX(-30%) translateY(30%);
-    background-color: #cc0000;
-    opacity: 0.2;
-    
-  }
-  10% {
-    background-color: darkorange;
-  }
-  20%{
-   background-color: gold; 
-  }
-  30% {
-    transform: scale(1.03) translateX(2%) translateY(-2%);    
-    opacity: 1;
-    background-color: green;
-  }
-  40%{
-   background-color: #00cccc; 
-  }
-  45% {
-    transform: scale(0.98)  translateX(0%) translateY(0%);
-    
-  }
-  50% {
-    background-color: #0000cc;
-  }
-  60% {
-    transform: scale(1.01) translateX(0%) translateY(0%);   
-    opacity: 1;
-    background-color: #6600CC;
-  } 
-  70% {
-    background-color: #ff99ff;
-  }
-  75% {
-    transform: scale(0.99)  translateX(0%) translateY(0%);
-    opacity: 1;
-  }
-  80% {
-   background-color: #f0f0f0;
-  }
-  90% {
-    background-color: transparent;
-    transform: scale(1.01)  translateX(0%) translateY(0%);    
-    opacity: 1;   
-  } 
-  100% {
-    transform: scale(1)  translateX(0%) translateY(0%);
-    opacity: 1;
-   background-color: #cc0000;
-  }   
-}
-
-.bigEntranceNoColor{
-  animation-name: bigEntranceNoColor;
-  -webkit-animation-name: bigEntranceNoColor;  
-
-  animation-duration: 21.6s; 
-  -webkit-animation-duration: 21.6s;
-
-  animation-timing-function: ease-out;  
-  -webkit-animation-timing-function: ease-out;  
-
-  visibility: visible !important;     
-}
-
-@keyframes bigEntranceNoColor {
-
-  0% {
-    transform: scale(0.3)  translateX(-30%) translateY(30%);
-    opacity: 0.2;
-    
-  }
-  
-  30% {
-    transform: scale(1.03) translateX(2%) translateY(-2%);    
-    opacity: 1;
-   
-  }
-  45% {
-    transform: scale(0.98)  translateX(0%) translateY(0%);
-    
-  }
-  60% {
-    transform: scale(1.01) translateX(0%) translateY(0%);   
-    opacity: 1;
-   }
-  75% {
-    transform: scale(0.99)  translateX(0%) translateY(0%);
-    opacity: 1;
-  }
-  90% {
- 
-    transform: scale(1.01)  translateX(0%) translateY(0%);    
-    opacity: 1;   
-  } 
-  100% {
-    transform: scale(1)  translateX(0%) translateY(0%);
-    opacity: 1;
- 
-  }   
-}
-
-@-webkit-keyframes bigEntrance {
-  
-  0% {
-    -webkit-transform: scale(0.3) translateX(-30%) translateY(30%);
-    opacity: 0.2;
-  }
-  30% {
-    -webkit-transform: scale(1.03) translateX(2%) translateY(-2%);    
-    opacity: 1;
-  }
-  45% {
-    -webkit-transform: scale(0.98) translateX(0%) translateY(0%);
-    opacity: 1;
-  }
-  60% {
-    -webkit-transform: scale(1.01) translateX(0%) translateY(0%);   
-    opacity: 1;
-  } 
-  75% {
-    -webkit-transform: scale(0.99) translateX(0%) translateY(0%);
-    opacity: 1;
-  }
-  90% {
-    -webkit-transform: scale(1.01) translateX(0%) translateY(0%);    
-    opacity: 1;
-  } 
-  100% {
-    -webkit-transform: scale(1) translateX(0%) translateY(0%);
-    opacity: 1;
-  }       
-}
-
-.pulseInDark{
-  animation-name: pulseInDark;
-  -webkit-animation-name: pulseInDark;  
-
-  animation-duration: 21.6s; 
-  -webkit-animation-duration: 21.6s;
-
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-}
-
-@keyframes pulseInDark {
-  0% {
     transform: scale(1.0);
-    background-color: #cc0000;
-  }
-  10% {
-    background-color: darkorange 
-  }
-  20%{
-    background-color: gold;
-  }
-  30% {
-    background-color: green;
-  }
-  40%{
-    background-color: #00cccc;
-  }
-  50% {
-    background-color: c;
-  }
-  60% {
-    background-color: c;
-  } 
-  70% {
-    background-color: c;
-  }
-  80% {
-    background-color: c;
-  }
-  90% {
-    background-color: transparent;
-  } 
-  100% {
-    transform: scale(0.3);
-    background-color: #cc0000;
   }
 }
 
-@-webkit-keyframes pulse {
+@-webkit-keyframes pulseOutColor {
   0% {
-    transform: scale(1.0);
-    background-color: #cc0000;
-  }
-  10% {
-    background-color: darkorange 
-  }
-  20%{
-    background-color: gold;
-  }
-  30% {
-    background-color: green;
-  }
-  40%{
-    background-color: #00cccc;
-  }
-  50% {
-    background-color: #0000cc;
-  }
-  60% {
-    background-color: #6600CC;
-  } 
-  70% {
-    background-color: #ff99ff;
-  }
-  80% {
-    background-color: #f0f0f0;
-  }
-  90% {
-    background-color: transparent;
-  } 
-  100% {
-    transform: scale(0.3);
-    background-color: #cc0000;
-  }   
-}
-
-.pulseOut{
-  animation-name: pulseOut;
-  -webkit-animation-name: pulseOut;  
-
-  animation-duration: 21.6s; 
-  -webkit-animation-duration: 21.6s;
-
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-}
-
-@keyframes pulseOut {
-  0% {
-    transform: scale(0.3);
-    background:
-      rgba(0, 0, 0, 0.7)
-      blue;
-  }
-  10% {
-    background:
-      rgba(0, 0, 0, 0.7)
-      blue;
-  }
-  20%{
-    background:
-      rgba(0, 0, 0, 0.7)
-      blue;
-  }
-  30% {
-    background:
-      rgba(0, 0, 0, 0.7)
-      blue;
-  }
-  40%{
-    background:
-      rgba(0, 0, 0, 0.7)
-      blue;
-  }
-  50% {
-    background:
-      rgba(0, 0, 0, 0.7)
-      blue;
-  }
-  60% {
-    background:
-      rgba(0, 0, 0, 0.7)
-      blue;
-  } 
-  70% {
-    background:
-      rgba(0, 0, 0, 0.7)
-      blue;
-  }
-  80% {
-    background:
-      rgba(0, 0, 0, 0.7)
-      blue;
-  }
-  90% {
-    background:
-      rgba(0, 0, 0, 0.7)
-      blue;
-  } 
-  100% {
-    transform: scale(1.0);
-    background:
-      rgba(0, 0, 0, 0.7)
-      blue;
-  }   
-}
-
-@-webkit-keyframes pulseOut {
-  0% {
-    transform: scale(0.3);
     background-color: red;
+    -webkit-transform: scale(0.3);
   }
-  5% {
-    background-color: orange;
+  3.3% {
+    background-color: orange; 
   }
-  10%{
+  6.6%{
     background-color: yellow;
   }
-  15% {
-    background-color: green;
+  10% {
+    background-color: #00ff00;
   }
-  20%{
-    background-color: skyblue;
+  13.3%{
+    background-color: #00ffff;
   }
-  25% {
-    background-color: blue;
+  16.6% {
+    background-color: #0000ff;
+  }
+  20% {
+    background-color: #9900ff;
+  } 
+  23.3% {
+    background-color: #ffccff;
+  }
+  26.7% {
+   background-color: #ffffff;
   }
   30% {
-    background-color: indigo;
-  } 
-  35% {
-    background-color: violet;
-  }
-  40% {
-    background-color: white;
-  }
-  45% {
     background-color: transparent;
   } 
-  50% {
+  33.3% {
     background-color: red;
   }
-  55% {
-    background-color: orange;
+  36.6% {
+    background-color: orange; 
   }
-  60%{
+  40%{
     background-color: yellow;
   }
-  65% {
-    background-color: green;
+  43.3% {
+    background-color: #00ff00;
   }
-  70%{
-    background-color: skyblue;
+  46.7%{
+    background-color: #00ffff;
   }
-  75% {
-    background-color: blue;
+  50% {
+    background-color: #0000ff;
   }
-  80% {
-    background-color: indigo;
+  53.3% {
+    background-color: #9900ff;
   } 
-  85% {
-    background-color: violet;
+  56.6% {
+    background-color: #ffccff;
   }
+  60% {
+   background-color: #ffffff;
+  }
+  63.3% {
+    background-color: transparent;
+  } 
+  66.7% {
+    background-color: red;
+  }
+  70% {
+    background-color: orange; 
+  }
+  73.3%{
+    background-color: yellow;
+  }
+  76.6% {
+    background-color: #00ff00;
+  }
+  80%{
+    background-color: #00ffff;
+  }
+  83.3% {
+    background-color: #0000ff;
+  }
+  86.7% {
+    background-color: #9900ff;
+  } 
   90% {
-    background-color: white;
+    background-color: #ffccff;
   }
-  95% {
+  93.3% {
+   background-color: #ffffff;
+  }
+  96.6% {
     background-color: transparent;
   } 
   100% {
-    transform: scale(1.0);
     background-color: red;
-  }     
+    -webkit-transform: scale(1.0);
+  }
 }
 
-.bigEntranceBright {
-  animation-name: bigEntranceBright;
-  -webkit-animation-name: bigEntranceBright;  
-
-  animation-duration: 21.6s; 
-  -webkit-animation-duration: 21.6s;
-
-  animation-timing-function: ease-out;  
-  -webkit-animation-timing-function: ease-out;  
-
-  visibility: visible !important;     
-}
-
-@keyframes bigEntranceBright {
-
-
+@-moz-keyframes pulseOutColor {
   0% {
-    transform: scale(0.3)  translateX(-30%) translateY(30%);
-    opacity: 0.2;
+    background-color: red;
+    -moz-transform: scale(0.3);
+  }
+  3.3% {
+    background-color: orange; 
+  }
+  6.6%{
+    background-color: yellow;
+  }
+  10% {
+    background-color: #00ff00;
+  }
+  13.3%{
+    background-color: #00ffff;
+  }
+  16.6% {
+    background-color: #0000ff;
+  }
+  20% {
+    background-color: #9900ff;
+  } 
+  23.3% {
+    background-color: #ffccff;
+  }
+  26.7% {
+   background-color: #ffffff;
   }
   30% {
-    transform: scale(1.03) translateX(2%) translateY(-2%);    
-    opacity: 1;
+    background-color: transparent;
+  } 
+  33.3% {
+    background-color: red;
   }
-  45% {
-    transform: scale(0.98)  translateX(0%) translateY(0%);
-    opacity: 1;
+  36.6% {
+    background-color: orange; 
+  }
+  40%{
+    background-color: yellow;
+  }
+  43.3% {
+    background-color: #00ff00;
+  }
+  46.7%{
+    background-color: #00ffff;
+  }
+  50% {
+    background-color: #0000ff;
+  }
+  53.3% {
+    background-color: #9900ff;
+  } 
+  56.6% {
+    background-color: #ffccff;
   }
   60% {
-    transform: scale(1.01) translateX(0%) translateY(0%);   
-    opacity: 1;
-  } 
-  75% {
-    transform: scale(0.99)  translateX(0%) translateY(0%);
-    opacity: 1;
+   background-color: #ffffff;
   }
+  63.3% {
+    background-color: transparent;
+  } 
+  66.7% {
+    background-color: red;
+  }
+  70% {
+    background-color: orange; 
+  }
+  73.3%{
+    background-color: yellow;
+  }
+  76.6% {
+    background-color: #00ff00;
+  }
+  80%{
+    background-color: #00ffff;
+  }
+  83.3% {
+    background-color: #0000ff;
+  }
+  86.7% {
+    background-color: #9900ff;
+  } 
   90% {
-    transform: scale(1.01)  translateX(0%) translateY(0%);    
-    opacity: 1;
+    background-color: #ffccff;
+  }
+  93.3% {
+   background-color: #ffffff;
+  }
+  96.6% {
+    background-color: transparent;
   } 
   100% {
-    transform: scale(1)  translateX(0%) translateY(0%);
-    opacity: 1;
-  }   
+    background-color: red;
+    -moz-transform: scale(1.0);
+  }
 }
 
-@-webkit-keyframes bigEntranceBright {
-  from {
-    box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.3);
-  }
-  to {
-    box-shadow: 0px 0px 89px 75vh #ffffff;
-  }
-
+@-ms-keyframes pulseOutColor {
   0% {
-    -webkit-transform: scale(0.3) translateX(-30%) translateY(30%);
-    opacity: 0.2;
+    background-color: red;
+    -ms-transform: scale(0.3);
+  }
+  3.3% {
+    background-color: orange; 
+  }
+  6.6%{
+    background-color: yellow;
+  }
+  10% {
+    background-color: #00ff00;
+  }
+  13.3%{
+    background-color: #00ffff;
+  }
+  16.6% {
+    background-color: #0000ff;
+  }
+  20% {
+    background-color: #9900ff;
+  } 
+  23.3% {
+    background-color: #ffccff;
+  }
+  26.7% {
+   background-color: #ffffff;
   }
   30% {
-    -webkit-transform: scale(1.03) translateX(2%) translateY(-2%);    
-    opacity: 1;
+    background-color: transparent;
+  } 
+  33.3% {
+    background-color: red;
   }
-  45% {
-    -webkit-transform: scale(0.98) translateX(0%) translateY(0%);
-    opacity: 1;
+  36.6% {
+    background-color: orange; 
+  }
+  40%{
+    background-color: yellow;
+  }
+  43.3% {
+    background-color: #00ff00;
+  }
+  46.7%{
+    background-color: #00ffff;
+  }
+  50% {
+    background-color: #0000ff;
+  }
+  53.3% {
+    background-color: #9900ff;
+  } 
+  56.6% {
+    background-color: #ffccff;
   }
   60% {
-    -webkit-transform: scale(1.01) translateX(0%) translateY(0%);   
-    opacity: 1;
-  } 
-  75% {
-    -webkit-transform: scale(0.99) translateX(0%) translateY(0%);
-    opacity: 1;
+   background-color: #ffffff;
   }
+  63.3% {
+    background-color: transparent;
+  } 
+  66.7% {
+    background-color: red;
+  }
+  70% {
+    background-color: orange; 
+  }
+  73.3%{
+    background-color: yellow;
+  }
+  76.6% {
+    background-color: #00ff00;
+  }
+  80%{
+    background-color: #00ffff;
+  }
+  83.3% {
+    background-color: #0000ff;
+  }
+  86.7% {
+    background-color: #9900ff;
+  } 
   90% {
-    -webkit-transform: scale(1.01) translateX(0%) translateY(0%);    
-    opacity: 1;
+    background-color: #ffccff;
+  }
+  93.3% {
+   background-color: #ffffff;
+  }
+  96.6% {
+    background-color: transparent;
   } 
   100% {
-    -webkit-transform: scale(1) translateX(0%) translateY(0%);
-    opacity: 1;
-  }       
+    background-color: red;
+    -ms-transform: scale(1.0);
+  }
 }
 
-.pulseBright{
-  animation-name: pulseBright;
-  -webkit-animation-name: pulseBright;  
-
-  animation-duration: 43.2s; 
-  -webkit-animation-duration: 43.2s;
-
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-}
-
-@keyframes pulseBright {
+@-o-keyframes pulseOutColor {
   0% {
-    transform: scale(1);
-    box-shadow: 0px 0px 89px 75vh #ffffff;
+    background-color: red;
+    -o-transform: scale(0.3);
+  }
+  3.3% {
+    background-color: orange; 
+  }
+  6.6%{
+    background-color: yellow;
+  }
+  10% {
+    background-color: #00ff00;
+  }
+  13.3%{
+    background-color: #00ffff;
+  }
+  16.6% {
+    background-color: #0000ff;
+  }
+  20% {
+    background-color: #9900ff;
+  } 
+  23.3% {
+    background-color: #ffccff;
+  }
+  26.7% {
+   background-color: #ffffff;
+  }
+  30% {
+    background-color: transparent;
+  } 
+  33.3% {
+    background-color: red;
+  }
+  36.6% {
+    background-color: orange; 
+  }
+  40%{
+    background-color: yellow;
+  }
+  43.3% {
+    background-color: #00ff00;
+  }
+  46.7%{
+    background-color: #00ffff;
   }
   50% {
-    transform: scale(.3);
-    box-shadow: 0px 0px 89px 0px rgba(255, 255, 255, 0.7);
-  } 
-  100% {
-    transform: scale(1);
-    box-shadow: 0px 0px 89px 75vh #ffffff;
-  }     
-}
-
-@-webkit-keyframes pulseBright {
-  0% {
-    -webkit-transform: scale(1);
+    background-color: #0000ff;
   }
-  50% {
-    -webkit-transform: scale(.3); 
+  53.3% {
+    background-color: #9900ff;
+  } 
+  56.6% {
+    background-color: #ffccff;
+  }
+  60% {
+   background-color: #ffffff;
+  }
+  63.3% {
+    background-color: transparent;
+  } 
+  66.7% {
+    background-color: red;
+  }
+  70% {
+    background-color: orange; 
+  }
+  73.3%{
+    background-color: yellow;
+  }
+  76.6% {
+    background-color: #00ff00;
+  }
+  80%{
+    background-color: #00ffff;
+  }
+  83.3% {
+    background-color: #0000ff;
+  }
+  86.7% {
+    background-color: #9900ff;
+  } 
+  90% {
+    background-color: #ffccff;
+  }
+  93.3% {
+   background-color: #ffffff;
+  }
+  96.6% {
+    background-color: transparent;
   } 
   100% {
-    -webkit-transform: scale(1);
-  }     
+    background-color: red;
+    -o-transform: scale(1.0);
+  }
 }
 
 
-*/
+
 
 
 /* ============================================================================================== 
@@ -1160,30 +2240,7 @@ This stylesheet and the associated (x)html may be modified in any way to fit you
     margin: 0;
     padding: 0;
 }
-header {
-    background-color:rgba(33, 33, 33, 0.9);
-    color:#ffffff;
-    display:block;
-    font: 14px/1.3 Arial,sans-serif;
-    height:50px;
-    position:relative;
-    z-index:5;
-}
-h2{
-    margin-top: 30px;
-    text-align: center;
-}
-header h2{
-    font-size: 22px;
-    margin: 0 auto;
-    padding: 10px 0;
-    width: 80%;
-    text-align: center;
-}
-header a, a:visited {
-    text-decoration:none;
-    color:#fcfcfc;
-}
+
 
 @keyframes move-twink-back {
     from {background-position:0 0;}
@@ -1226,33 +2283,24 @@ header a, a:visited {
   right:0;
   bottom:0;
   width:100%;
-  height:100%;
+  height:300vh;
   display:block;
 }
 
 .stars {
   background:#000 url(../img/stars.png) repeat top center;
   z-index:0;
+  transform: translateZ(0);
 }
 
 .twinkling{
   background:transparent url(../img/twinkling.png) repeat top center;
   z-index:1;
+  transform: translateZ(0);
 
   -moz-animation:move-twink-back 200s linear infinite;
   -ms-animation:move-twink-back 200s linear infinite;
   -o-animation:move-twink-back 200s linear infinite;
   -webkit-animation:move-twink-back 200s linear infinite;
   animation:move-twink-back 200s linear infinite;
-}
-
-.clouds{
-    background:transparent url(../img/clouds.png) repeat top center;
-    z-index:3;
-
-  -moz-animation:move-clouds-back 200s linear infinite;
-  -ms-animation:move-clouds-back 200s linear infinite;
-  -o-animation:move-clouds-back 200s linear infinite;
-  -webkit-animation:move-clouds-back 200s linear infinite;
-  animation:move-clouds-back 200s linear infinite;
 }
