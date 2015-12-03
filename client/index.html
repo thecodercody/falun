@@ -24,76 +24,28 @@
 <meta name="theme-color" content="#ffffff">
 
   <link rel="stylesheet" type="text/css" href="css/styles.css"/>
-  <script type="text/javascript" src="js/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
-  <!--<script type="text/javascript" src="js/draggable-background.js"></script> -->
-  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+
+  <!--<script type="text/javascript" src="js/index.js"></script>-->
+  <script type="text/javascript" src="js/app.js"></script>
 
 </head>
 
 
-<body>
+<body ng-app="thegreatlaw" controller="MainCtrl">
       <audio autoplay loop preload="auto">
       <source src="sound/JiShi.mp3" type="audio/mp3"/>
       
 
     </audio> 
     
-      <div class="background">
-        <div id="bg"></div>
-      </div>
-    
-  <div class="content">
-    
-    <table id="wrapper">
-      <tr>
-        <td id="falunArea">        
-
-        
-         <!--
-          <video autoplay id="turningFalun" preload class="bigEntrance nine" mediagroup="mg1">
-            <source src="img/backwardOnce.webm" type="video/webm">
-            Your browser does not support the video tag.
-          </video>
-          <video autoplay id="turningFalunForward" preload class="bigEntrance seven" mediagroup="mg1">
-            <source src="img/forwardOnce.webm" type="video/webm">
-            Your browser does not support the video tag.
-          </video>
-          <video autoplay id="turningFalunBright" preload class="bigEntranceBright eight brightOut" mediagroup="mg1">
-            <source src="img/brightBackwardOnce.webm" type="video/webm">
-            Your browser does not support the video tag.
-          </video>
-          <video autoplay id="turningFalunBrightForward" preload class="bigEntranceBright six brightOut" mediagroup="mg1">
-            <source src="img/brightForwardOnce.webm" type="video/webm">
-            Your browser does not support the video tag.
-          </video> 
-          -->
-
-           <!--
-           <img src="img/backward.gif" alt="" id="turningFalun" class="bigEntrance visible"/>
-           <img src="img/falunBright300px.gif" alt="" id="turningFalunBright" class="bigEntranceBright hidden"/>
-           -->
-           <!-- <img id="spinner" src="img/bclear9.gif"/ class=""> -->
-           <!-- <div class="zsr"></div> -->
-               <div class="objects">
-                 <div class="dark enter"></div>
-                 <div id="dark" class="enter"></div>
-                 <div id="colors" class="enterColors"></div>
-                 <div class="light enter hidden"></div>
-                 <div id="enterGlow" class="hidden enterGlow"></div>
-                </div>
-             </td>
-           <td id="intro">
-              <h3>This Law Wheel design is the universe's miniature, and in all other dimensions it, too, has its forms of being and its evolution processes, so I call it a world. - <em><a href="http://www.falundafa.org/eng/eng/zfl_new.html">Zhuan Falun</a></em></h3>
-           </td>   
-          
-        </td>
-           
-      </tr>
-    </table>
+     <div ng-view></div>
 
     <div class="stars"></div>
     <div class="twinkling"></div>
     
-  </div>
+  
 </body>

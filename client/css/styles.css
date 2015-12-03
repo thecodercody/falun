@@ -3,13 +3,13 @@ audio {
 }
 
 #bg {
-  min-width: 100%;
-  min-height: 100%;
-  background: url('../img/layersBlack.png') no-repeat;
-  background-position: center 50%;
-  position: absolute;
+  background: url('../img/masterLi.png') no-repeat center center;
   background-size: cover;
+  min-width: 100vw;
+  min-height: 100vh;
+  opacity: 0.9;
   z-index: 6;
+  position: absolute;
 }
 
 .background {
@@ -18,8 +18,8 @@ audio {
   
   z-index: 6;
   position: absolute;
-  min-height: 300vh;
-  min-width: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
   overflow: hidden;
   cursor: grab;
   cursor: -webkit-grab;
@@ -32,6 +32,12 @@ audio {
 
 .hidden {
   visibility: hidden;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 #colors {
@@ -58,12 +64,7 @@ audio {
   height: 303px;
   width: 300px;
 }
-/*
-.zsr {
-  z-index: 12;
-  position: fixed;
-}
-*/
+
 #enterGlow {
   position: fixed;
   border-radius: 100%;
@@ -75,6 +76,20 @@ audio {
   width: 300px;
   transform: translateZ(0);
   z-index: 5;
+}
+
+#innerWhite {
+  background-color: white;
+  position: fixed;
+  border-radius: 100%;
+  bottom: 50%;
+  margin-bottom: -150px;
+  left: 50%;
+  margin-left: -152px;
+  height: 303px;
+  width: 300px;
+  transform: translateZ(0);
+  z-index: 4;
 }
 
 h3 {
@@ -886,6 +901,197 @@ p {
   }   
 }
 
+.enterInnerWhite {
+  animation-name: enterInnerWhite;
+  -webkit-animation-name: enterInnerWhite;
+  -moz-animation-name: enterInnerWhite;
+  -ms-animation-name: enterInnerWhite;
+  -o-animation-name: enterInnerWhite;
+
+  animation-duration: 21.7s;
+  -webkit-animation-duration: 21.7s;
+  -moz-animation-duration: 21.7s;
+  -ms-animation-duration: 21.7s;
+  -o-animation-duration: 21.7s;
+
+  animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  
+  animation-fill-mode: forwards;     
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwar
+}
+
+@keyframes enterInnerWhite {
+  0% {
+    transform: scale(0.3)  translateX(-30%) translateY(30%);
+    opacity: 0.5;
+  }
+  23.3% {
+    transform: scale(1.03) translateX(2%) translateY(-2%);
+  }
+  30% {
+    transform: scale(1.0)  translateX(0%) translateY(0%);    
+      
+  } 
+  100% {
+    opacity: 1;
+  }   
+}
+
+@-webkit-keyframes enterInnerWhite {
+  0% {
+    -webkit-transform: scale(0.3)  translateX(-30%) translateY(30%);
+    opacity: 0.5;
+  }
+  23.3% {
+    -webkit-transform: scale(1.03) translateX(2%) translateY(-2%);
+  }
+  30% {
+    -webkit-transform: scale(1.0)  translateX(0%) translateY(0%);    
+      
+  } 
+  100% {
+    -webkit-transform: scale(1.0)  translateX(0%) translateY(0%);    
+  }   
+}
+
+@-moz-keyframes enterInnerWhite {
+  0% {
+    -moz-transform: scale(0.3)  translateX(-30%) translateY(30%);
+    opacity: 0.5;
+  }
+  23.3% {
+    -moz-transform: scale(1.03) translateX(2%) translateY(-2%);
+  }
+  30% {
+    -moz-transform: scale(1.0)  translateX(0%) translateY(0%);    
+      
+  } 
+  100% {
+    -moz-transform: scale(1.0)  translateX(0%) translateY(0%);    
+  }   
+}
+
+@-ms-keyframes enterInnerWhite {
+  0% {
+    -ms-transform: scale(0.3)  translateX(-30%) translateY(30%);
+    opacity: 0.5;
+  }
+  23.3% {
+    -ms-transform: scale(1.03) translateX(2%) translateY(-2%);
+  }
+  30% {
+    -ms-transform: scale(1.0)  translateX(0%) translateY(0%);    
+      
+  } 
+  100% {
+    -ms-transform: scale(1.0)  translateX(0%) translateY(0%);    
+  }   
+}
+
+@-o-keyframes enterInnerWhite {
+  0% {
+    -o-transform: scale(0.3)  translateX(-30%) translateY(30%);
+    opacity: 0.5;
+  }
+  23.3% {
+    -o-transform: scale(1.03) translateX(2%) translateY(-2%);
+  }
+  30% {
+    -o-transform: scale(1.0)  translateX(0%) translateY(0%);    
+      
+  } 
+  100% {
+    -o-transform: scale(1.0)  translateX(0%) translateY(0%);    
+  }   
+}
+
+.pulseInInnerWhite {
+  animation-name: pulseInInnerWhite;
+  -webkit-animation-name: pulseInInnerWhite;
+  -moz-animation-name: pulseInInnerWhite;
+  -ms-animation-name: pulseInInnerWhite;
+  -o-animation-name: pulseInInnerWhite;
+  
+  animation-duration: 21.7s;
+  -webkit-animation-duration: 21.7s;
+  -moz-animation-duration: 21.7s;
+  -ms-animation-duration: 21.7s;
+  -o-animation-duration: 21.7s;
+
+  animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+}
+
+@keyframes pulseInInnerWhite {
+  from {
+    transform: scale(1.0);
+    opacity: 1.0;
+  }
+  to {
+    transform: scale(0.3);
+    opacity: 0.5;
+  }
+}
+
+@-webkit-keyframes pulseInInnerWhite{
+  from {
+    -webkit-transform: scale(1.0);
+    opacity: 1.0;
+  }
+  to {
+    -webkit-transform: scale(0.3);
+    opacity: 0.5;
+  }
+}
+
+@-moz-keyframes pulseInInnerWhite {
+  from {
+    -moz-transform: scale(1.0);
+    opacity: 1.0;
+  }
+  to {
+    -moz-transform: scale(0.3);
+    opacity: 0.5;
+  }
+}
+
+@-ms-keyframes pulseInInnerWhite {
+  from {
+    -ms-transform: scale(1.0);
+    opacity: 1.0;
+  }
+  to {
+    -ms-transform: scale(0.3);
+    opacity: 0.5;
+  }
+}
+
+@-o-keyframes pulseInInnerWhite {
+  from {
+    -o-transform: scale(1.0);
+    opacity: 1.0;
+  }
+  to {
+    -o-transform: scale(0.3);
+    opacity: 0.5;
+  }
+}
 
 .pulseIn {
   animation-name: pulseIn;
@@ -1554,6 +1760,88 @@ p {
     -o-transform: scale(0.3);
   }
 }
+
+.pulseOutInnerWhite {
+  animation-name: pulseOutInnerWhite;
+  -webkit-animation-name: pulseOutInnerWhite;
+  -moz-animation-name: pulseOutInnerWhite;
+  -ms-animation-name: pulseOutInnerWhite;
+  -o-animation-name: pulseOutInnerWhite;
+
+  animation-duration: 21.7s;
+  -webkit-animation-duration: 21.7s;
+  -moz-animation-duration: 21.7s;
+  -ms-animation-duration: 21.7s;
+  -o-animation-duration: 21.7s;
+
+  animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+}
+
+@keyframes pulseOutInnerWhite {
+  from {
+    transform: scale(0.3);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1.0);
+    opacity: 1.0;
+  }
+}
+
+@-webkit-keyframes pulseOutInnerWhite {
+  from {
+    -webkit-transform: scale(0.3);
+    opacity: 0.5;
+  }
+  to {
+    -webkit-transform: scale(1.0);
+    opacity: 1.0;
+  }
+}
+
+@-moz-keyframes pulseOutInnerWhite {
+  from {
+    -moz-transform: scale(0.3);
+    opacity: 0.5;
+  }
+  to {
+    -moz-transform: scale(1.0);
+    opacity: 1.0;
+  }
+}
+
+@-ms-keyframes pulseOutInnerWhite {
+  from {
+    -ms-transform: scale(0.3);
+    opacity: 0.5;
+  }
+  to {
+    -ms-transform: scale(1.0);
+    opacity: 1.0;
+  }
+}
+
+@-o-keyframes pulseOutInnerWhite {
+  from {
+    -o-transform: scale(0.3);
+    opacity: 0.5;
+  }
+  to {
+    -o-transform: scale(1.0);
+    opacity: 1.0;
+  }
+}
+
 
 .pulseOut {
   animation-name: pulseOut;
