@@ -7,7 +7,8 @@ angular.module('thegreatlaw', ['ngRoute'])
   .controller('MainCtrl', ['$scope', 'appFact', function($scope, appFact){
    window.onload = function(){
       var darks = $('.dark'),
-         lights = $('.light');
+         lights = $('.light'),
+         begins = $('#beginButton');
 
       var lightLinks = ["img/bclearsmall/tmp-0.gif",
                          "img/bclearsmall/tmp-1.gif",
@@ -48,9 +49,16 @@ angular.module('thegreatlaw', ['ngRoute'])
                     "img/zhenshanren9.png"
       ];
 
+      var beginLinks = ["img/begin/begin0.png",
+                        "img/begin/begin1.png",
+                        "img/begin/begin2.png",
+                        "img/begin/begin3.png"
+      ];
+
         //$('.background').draggable({ axis: 'y'});
-
-
+        $.each(beginLinks, function(i, el){
+          $('<img id="begin' + i + '" class="beginImg">').attr('src', el).appendTo(begins)
+        })
 
         $.each(darkLinks, function(i, el){
           $('<img class="darkImg">').attr('src', el).appendTo(darks);
@@ -66,6 +74,12 @@ angular.module('thegreatlaw', ['ngRoute'])
           }
         });
 
+        $('img', begins).each(function(i, el){
+          if (i !== 0){
+            $(el).css('display', 'none');
+          }
+        });
+
         $('img', lights).each(function(i, el){
           if (i !== 0){
             $(el).css('display', 'none');
@@ -73,7 +87,8 @@ angular.module('thegreatlaw', ['ngRoute'])
         });
 
         $('#falunArea').append(darks);
-        $('#falunArea').append(lights);     
+        $('#falunArea').append(lights);
+        $('#begin').append(begins);     
 
         var images;
         var numLoops;
@@ -85,6 +100,32 @@ angular.module('thegreatlaw', ['ngRoute'])
         var rand = 0;
         var zCur = 0;
         var zLoops = 0;
+        var beginLoops = 0;
+        var beginCurrent = 0;
+        var images2;
+
+        var sparkle = function(){
+         images2 = $('.beginImg');
+         setTimeout(function(){
+            if(beginCurrent < images2.length - 1){
+              $(images2[beginCurrent]).hide();
+              $(images2[beginCurrent + 1]).show();
+              beginCurrent++;
+            } else {
+              $(images2[beginCurrent]).hide();
+              $(images2[0]).show();
+              beginCurrent = 0;
+            }
+            setTimeout(arguments.callee, 500);
+          }, 500);
+        };
+        
+        $(function() {
+          $('#begin0').delay(64800).fadeIn(3000, sparkle);
+        });
+
+
+
 
       var rotate = function(links, shade, direction) {
         setTimeout(function(){
