@@ -5,7 +5,8 @@ angular.module('thegreatlaw', ['ngRoute'])
   })
 
   .controller('MainCtrl', ['$scope', 'appFact', function($scope, appFact){
-   window.onload = function(){
+   $scope.$on('$routeChangeSuccess', function(){
+     
       var darks = $('.dark'),
          lights = $('.light'),
          begins = $('#beginButton');
@@ -49,16 +50,17 @@ angular.module('thegreatlaw', ['ngRoute'])
                     "img/zhenshanren9.png"
       ];
 
-      var beginLinks = ["img/begin/begin0.png",
-                        "img/begin/begin1.png",
-                        "img/begin/begin2.png",
-                        "img/begin/begin3.png"
-      ];
+        $('#rightArrow').hide();
+        $('#leftArrow').hide();
 
-        //$('.background').draggable({ axis: 'y'});
-        $.each(beginLinks, function(i, el){
-          $('<img id="begin' + i + '" class="beginImg">').attr('src', el).appendTo(begins)
-        })
+        setTimeout(function() {
+          $('#rightArrow').fadeIn(2000);
+          $('#fingers').fadeIn(2000);
+          setTimeout(function(){
+            $('#fingers').hide();
+          }, 3000);
+        }, 43200);
+
 
         $.each(darkLinks, function(i, el){
           $('<img class="darkImg">').attr('src', el).appendTo(darks);
@@ -73,13 +75,13 @@ angular.module('thegreatlaw', ['ngRoute'])
             $(el).css('display', 'none');
           }
         });
-
+/*
         $('img', begins).each(function(i, el){
           if (i !== 0){
             $(el).css('display', 'none');
           }
         });
-
+*/
         $('img', lights).each(function(i, el){
           if (i !== 0){
             $(el).css('display', 'none');
@@ -88,7 +90,7 @@ angular.module('thegreatlaw', ['ngRoute'])
 
         $('#falunArea').append(darks);
         $('#falunArea').append(lights);
-        $('#begin').append(begins);     
+  //      $('#begin').append(begins);     
 
         var images;
         var numLoops;
@@ -103,7 +105,7 @@ angular.module('thegreatlaw', ['ngRoute'])
         var beginLoops = 0;
         var beginCurrent = 0;
         var images2;
-
+/*
         var sparkle = function(){
          images2 = $('.beginImg');
          setTimeout(function(){
@@ -121,9 +123,9 @@ angular.module('thegreatlaw', ['ngRoute'])
         };
         
         $(function() {
-          $('#begin0').delay(64800).fadeIn(3000, sparkle);
+          $('#begin0').delay(1000).fadeIn(3000, sparkle);
         });
-
+*/
 
 
 
@@ -231,10 +233,13 @@ angular.module('thegreatlaw', ['ngRoute'])
           setTimeout(arguments.callee, 100);
         }, 100);
       };
-
-      rotate(lightLinks, 'light','backward');
-      rotate(darkLinks, 'dark', 'backward');
-
+       
+      var rotator = function(){ 
+        rotate(lightLinks, 'light','backward');
+        rotate(darkLinks, 'dark', 'backward');
+      };
+      
+      rotator();
 
       $('.dark').on('click', function(){
         $('.dark').addClass('hidden');
@@ -253,7 +258,7 @@ angular.module('thegreatlaw', ['ngRoute'])
         $('#bgColor').addClass('hidden');
         $('#innerWhite').addClass('hidden');
       });
-    };
+    });
   }])
 
   .config(function($routeProvider, $locationProvider){
@@ -262,6 +267,16 @@ angular.module('thegreatlaw', ['ngRoute'])
       .when('/', {
         templateUrl : '../pages/home.html',
         controller: 'MainCtrl'
+      })
+
+      .when('/intro', {
+        templateUrl: '../pages/intro.html',
+        controller: 'IntroCtrl'
+      })
+
+      .when('/descent', {
+        templateUrl: '../pages/descent.html',
+        controller: 'DescentCtrl'
       })
 
       .otherwise({redirectTo: '/'});
