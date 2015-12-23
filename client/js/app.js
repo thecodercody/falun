@@ -1,12 +1,27 @@
-angular.module('thegreatlaw', ['ngRoute'])
+angular.module('thegreatlaw', ['ngRoute', 'ngAnimate'])
 
   .factory('appFact', function appFactory(){
     return {};
   })
 
-  .controller('MainCtrl', ['$scope', 'appFact', function($scope, appFact){
+  .controller('MainCtrl', ['$scope', function($scope){
+    $scope.$on('$routeChangeSuccess', function(){
+      $scope.pageClass = 'home';
+      $('#page1').fadeIn(4000);
+      setTimeout(function(){
+        $('#rightArrow').fadeIn(4000);
+      }, 4000);
+    });
+  }])
+
+  .controller('FalunCtrl', ['$scope', 'appFact', function($scope, appFact){
    $scope.$on('$routeChangeSuccess', function(){
-     
+      $('#divineCompassion').remove();
+      $scope.pageClass = 'falun';
+       $('#rightArrow').remove();
+        $('#leftArrow').remove();
+      var jishi = $('<audio id="jishi" autoplay loop preload="auto"><source src="sound/jishi.mp3" type="audio/mp3"></audio>');
+      $('body').append(jishi);
       var darks = $('.dark'),
          lights = $('.light'),
          begins = $('#beginButton');
@@ -50,11 +65,13 @@ angular.module('thegreatlaw', ['ngRoute'])
                     "img/zhenshanren9.png"
       ];
 
-        $('#rightArrow').hide();
-        $('#leftArrow').hide();
+        $('#rightArrow').remove();
+        $('#leftArrow').remove();
 
         setTimeout(function() {
-          $('#rightArrow').fadeIn(2000);
+          $('#beginButton').append('<a href="/intro"><img id="rightArrow" src="../img/arrow/right/rightArrow.gif" style="display: none"></a>');
+          $('#leftArrowWrapper').append('<a href="/home2"><img id="leftArrow" src="../img/arrow/left/leftArrow.gif" style="display: none"></a>');
+          $('#leftArrow, #rightArrow').fadeIn(2000);
           $('#fingers').fadeIn(2000);
           setTimeout(function(){
             $('#fingers').hide();
@@ -82,7 +99,7 @@ angular.module('thegreatlaw', ['ngRoute'])
           }
         });
 */
-        $('img', lights).each(function(i, el){
+        ('img', lights).each(function(i, el){
           if (i !== 0){
             $(el).css('display', 'none');
           }
@@ -234,6 +251,8 @@ angular.module('thegreatlaw', ['ngRoute'])
         }, 100);
       };
        
+      appFact = rotate;
+
       var rotator = function(){ 
         rotate(lightLinks, 'light','backward');
         rotate(darkLinks, 'dark', 'backward');
@@ -241,7 +260,7 @@ angular.module('thegreatlaw', ['ngRoute'])
       
       rotator();
 
-      $('.dark').on('click', function(){
+      $('.dark').on('mouseenter', function(){
         $('.dark').addClass('hidden');
         $('.light').removeClass('hidden');
         $('#dark').addClass('hidden');
@@ -250,7 +269,7 @@ angular.module('thegreatlaw', ['ngRoute'])
         $('#innerWhite').removeClass('hidden');
       });
 
-      $('.light').on('click', function(){
+      $('.light').on('mouseleave', function(){
         $('.light').addClass('hidden');
         $('.dark').removeClass('hidden');
         $('#dark').removeClass('hidden');
@@ -261,12 +280,24 @@ angular.module('thegreatlaw', ['ngRoute'])
     });
   }])
 
+  
+
   .config(function($routeProvider, $locationProvider){
     $routeProvider
 
       .when('/', {
-        templateUrl : '../pages/home.html',
+        templateUrl: '../pages/home.html',
         controller: 'MainCtrl'
+      })
+
+      .when('/home2', {
+        templateUrl: '../pages/home2.html',
+        controller: 'Home2Ctrl'
+      })
+
+      .when('/falun', {
+        templateUrl : '../pages/falun.html',
+        controller: 'FalunCtrl'
       })
 
       .when('/intro', {

@@ -1,9 +1,161 @@
+#masterLiFalunPic {
+  z-index: 15;
+  width: 350px;
+  height: 420px;
+  position: fixed;
+  display: none;
+  top: 50%;
+  left: 50%;
+  margin-left: -175px;
+  margin-top: -100px;
+  
+}
+
+#ripples {
+  animation-name: silverAndGold;
+  animation-timing-function: ease-out;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  opacity: 0.5;
+  width: 400px;
+  height: 400px;
+  z-index: 6;
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  margin-top: -200px;
+  margin-right: -199px;
+  opacity: 1.0;
+  border-radius: 100%;
+  display: none;
+}
+
+@keyframes silverAndGold {
+  0% {
+    box-shadow: 0px 0px 100px 30px gold;
+  }
+  37.5% {
+    box-shadow: 0px 0px 100px 30px gold;
+  }
+  50% {
+    box-shadow: 0px 0px 100px 30px silver;
+  }
+  87.5% {
+    box-shadow: 0px 0px 100px 30px silver;
+  }
+  100% {
+    box-shadow: 0px 0px 100px 30px gold;
+  }
+}
+
+#sparklingRays {
+  width: 100vw;
+  height: auto;
+  position: fixed;
+  z-index: 5;
+  top: 50%;
+  right: 50%;
+  margin-top: -50%;
+  margin-right: -50%;
+  display: none;
+}
+
+#masking {
+  z-index: 5;
+}
+
+#black {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 13;
+  position: relative;
+  display: none;
+}
+
+#blackIntro {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 15;
+  position: relative;
+  display: none;
+}
+
+#goldenParadisePic {
+  height: 100vh;
+  width: auto;
+  position: relative;
+  z-index: 16;
+  display: none;
+}
+
+
+#nebula {
+  height: 100vh;
+  width: auto;
+  display: none;
+  opacity: 1.0;
+  position: relative;
+  z-index: 14;
+}
+
+.growCreator {
+  animation-name: creatorIntro;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes creatorIntro {
+  from {
+    transform: scale(0.1);
+  }
+  to {
+    transform: scale(1.0);
+  }
+}
+
 .hello {
   color: gold;
   z-index: 6;
+  position: fixed;
+  text-align: center;
+  bottom: 10%;
+  width: 50%;
+  bottom: 10%;
+  right: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+#page1 {
+  color: white;
+  z-index: 6;
   position: relative;
   text-align: center;
-  transform: translateY(150%);
+  display: none;
+}
+
+#page2 {
+  color: white;
+  z-index: 6;
+  position: relative;
+  text-align: center;
+  display: none;
+}
+
+
+#hello2 {
+  color: gold;
+  z-index: 6;
+  position: fixed;
+  text-align: center;
+  bottom: 10%;
+  right: 25%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
   display: none;
 }
 
@@ -20,32 +172,42 @@ table {
 
 #leftArrow {
   max-width: 100%;
+  z-index: 25;
 }
 
 #leftArrowWrapper {
   position: fixed;
   bottom: 10%;
-  z-index: 12;
+  z-index: 25;
   width: 13%;
-  left: 15%;
+  left: 5%;
   height: 40px;
 }
 
 .heavenImgs {
   
-  z-index: 6;
-  position: fixed;
-  top: 5%;
-  
-  opacity: 0.8;
-  width: 640px;
-  height: auto;
-  margin: 0 auto;
-  vertical-align: middle;
+  z-index: 50;
+  position: relative;
+  opacity: 1.0;
+  width: auto;
+  height: 72vh;
   display: none;
+  left: 20%;
+}
+
+.slideOutDown {
+  animation: slideOutDown 2s both ease-in;
+}
+
+.slideInTop {
+  animation: slideInTop 2s both ease-in;
 }
 
 .imgs {
+  width: 100%;
+}
+
+.texts {
   width: 100%;
 }
 
@@ -83,7 +245,7 @@ table {
   display: none;
   width: 100vw;
   height: 100vh;
-  z-index: 15;
+  z-index: 17;
   position: relative;
 
 }
@@ -94,4 +256,338 @@ table {
 
 p {
   text-align: center;
+}
+
+#jesusLordPic {
+  height: 100vh;
+  width: auto;
+  position: relative;
+  z-index: 16;
+  display: none;
+}
+
+#heavenPic {
+    z-index: 6;
+  position: fixed;
+  top: 5%;
+  
+  opacity: 1.0;
+  width: auto;
+  height: 72vh;
+  margin: 0 auto;
+  vertical-align: middle;
+  display: none;
+}
+
+.nebulaAnimation {
+  animation-name: nebulaAnimation;
+  animation-duration: 9s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes nebulaAnimation {
+  from {
+    transform: scale(0.01);
+  }
+  to {
+    transform: scale(1.0);
+  }
+}
+
+#deitiesInCosmos {
+  height: auto;
+  width: 100vw;
+  display: none;
+  opacity: 1.0;
+  position: relative;
+  z-index: 15;
+}
+
+#halo {
+  border-radius: 100%;
+  box-shadow: 0px 0px 10px 10px white;
+  z-index: 9;
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  margin-top: -150px;
+  margin-right: -100px;
+  opacity: 1;
+  display: none;
+}
+
+#falunRays {
+  display: none;
+  z-index: 5;
+  position: fixed;
+  width: 850px;
+  height: 850px;
+  top: 50%;
+  right: 50%;
+  margin-top: -433px;
+  margin-right: -423px;
+  opacity: 1.0;
+}
+
+#flash {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 100;
+  position: relative;
+  display: none;
+}
+
+#theSummon {
+  z-index: 19;
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  margin-left: -341.5px;
+  display: none;
+}
+
+#blackout {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 5;
+  position: relative;
+  display: none;
+}
+
+#text2 {
+  color: gold;
+  opacity: 0.7;
+  position: fixed;
+  display: none;
+  z-index: 43;
+  left: 50%;
+  margin-left: -215px;
+  bottom: 5%;
+  width: 40%;
+}
+
+#shan {
+  position: fixed;
+  z-index: 14;
+  top: -1%;
+  left: 50%;
+  margin-left: -50px;
+  height: auto;
+  width: 100px;
+  display: none;
+}
+
+#zhen {
+  position: fixed;
+  z-index: 14;
+  top: 50%;
+  left: 25%;
+  margin-top: -71px;
+  height: auto;
+  width: 100px;
+  display: none;
+}
+
+#ren {
+  position: fixed;
+  z-index: 14;
+  top: 50%;
+  right: 25%;
+  margin-top: -71px;
+  height: auto;
+  width: 100px;
+  display: none;
+}
+
+#zfRaysLeft {
+  box-shadow: 0px 0px 10px 10px white;
+  top: 50%;
+  left: 25%;
+  margin-left: -50px;
+  margin-top: -125px;
+  display: none;
+}
+
+#zfRaysTop {
+  left: 50%;
+  top: 50%;
+  margin-top: -150px;
+  margin-left: -100px;
+  box-shadow: 0px 0px 5px 5px gold;
+}
+
+#zf {
+  position: fixed;
+  z-index: 14;
+  bottom: 20%;
+  width: 86px;
+  height: 130px;
+  left: 50%;
+  margin-left: -43px;
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 2px 2px rgba(233, 186, 49, 0.7);
+  display: none;
+}
+
+.zfRays {
+  animation-name: zfRays;
+  animation-iteration-count: infinite;
+  animation-duration: 9s;
+
+  position: fixed;
+  z-index: 13;
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  opacity: 0.7;
+  display: none;
+  
+}
+
+@keyframes zfRays {
+  0% {
+    background-color: red;
+  }
+  3.3% {
+    background-color: orange; 
+  }
+  6.6%{
+    background-color: yellow;
+  }
+  10% {
+    background-color: #00ff00;
+  }
+  13.3%{
+    background-color: #00ffff;
+  }
+  16.6% {
+    background-color: #0000ff;
+  }
+  20% {
+    background-color: #9900ff;
+  } 
+  23.3% {
+    background-color: #ffccff;
+  }
+  26.7% {
+   background-color: #ffffff;
+  }
+  30% {
+    background-color: transparent;
+  } 
+  33.3% {
+    background-color: red;
+  }
+  36.6% {
+    background-color: orange; 
+  }
+  40%{
+    background-color: yellow;
+  }
+  43.3% {
+    background-color: #00ff00;
+  }
+  46.7%{
+    background-color: #00ffff;
+  }
+  50% {
+    background-color: #0000ff;
+  }
+  53.3% {
+    background-color: #9900ff;
+  } 
+  56.6% {
+    background-color: #ffccff;
+  }
+  60% {
+   background-color: #ffffff;
+  }
+  63.3% {
+    background-color: transparent;
+  } 
+  66.7% {
+    background-color: red;
+  }
+  70% {
+    background-color: orange;
+  }
+  73.3%{
+    background-color: yellow;
+  }
+  76.6% {
+    background-color: #00ff00;
+  }
+  80%{
+    background-color: #00ffff;
+  }
+  83.3% {
+    background-color: #0000ff;
+  }
+  86.7% {
+    background-color: #9900ff;
+  } 
+  90% {
+    background-color: #ffccff;
+  }
+  93.3% {
+   background-color: #ffffff;
+  }
+  96.6% {
+    background-color: transparent;
+  } 
+  100% {
+    background-color: red;
+  }
+}
+
+#hyperspace {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 22;
+  display: none;
+}
+
+
+.rippleImg {
+  box-shadow: inset rgba(0, 0, 0, 0.6);
+  width: 400px;
+  height: 400px;
+  z-index: 6;
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  margin-top: -200px;
+  margin-right: -199px;
+  opacity: 1.0;
+  border-radius: 100%;
+  opacity: 0.5;
+}
+
+
+@keyframes slideOutLeft {
+    to      { transform: translateX(-100%); }
+}
+
+@keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}
+
+@keyframes slideOutDown {
+    from    { transform:translateY(0%); }
+    to      { transform: translateY(100%); }
+}
+
+@keyframes slideInTop {
+    from    { transform:translateY(-100%); }
+    to      { transform: translateY(0%); }
+}
+
+@keyframes scaleUp {
+    from    { opacity: 0.3; -webkit-transform: scale(0.8); }
 }
