@@ -137,6 +137,164 @@
   display: none;
 }
 
+
+#mid {
+  width: auto;
+  height: 100vh;
+}
+
+
+
+/* Extra small devices (phones, up to 480px) */
+@media screen and (max-width: 767px) {
+  #playPic {
+    height: 200px;
+    width: 200px;
+    top: 50%;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  button {
+    top: 50%;
+  }
+
+  #i {
+    height: 20px;
+    width: 20px;
+  }
+
+  .objects, .dark, #dark, #colors, .light, #enterGlow, #innerWhite {
+      
+      height: 101px;
+      width: 100px;
+      margin-left: -50px;
+      margin-bottom: -50px;
+  }
+
+  .darkImg, .lightImg {
+      height: 101px;
+      width: 100px;
+  }
+
+  #page1, #page2, #hello2, #text {
+    font-size: 0.7em;
+  }
+
+  #text {
+    position: relative;
+    bottom: -57vh;
+    transform: translateY(5vh);
+  }
+
+  .textContainer h3{
+  position: relative;
+  top: 50%;
+  transform: translateY(30%);
+}
+
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+ #playPic {
+    height: 300px;
+    width: 300px;
+  }
+
+  .objects, .dark, #dark, #colors, .light, #enterGlow, #innerWhite {
+      height: 202px;
+      width: 200px;
+      margin-left: -101px;
+      margin-bottom: -100px;
+  }
+
+  .darkImg, .lightImg {
+    height: 202px;
+    width: 200px;
+  }
+
+  #page1, #page2, #hello2, #text {
+    font-size: 1.0em;
+  }
+
+  .textContainer h3{
+    position: relative;
+    top: 50%;
+    transform: translateY(40%);
+  }
+
+  #text {
+    transform: translateY(65vh);
+  }
+}
+/* tablets/desktops and up ----------- */
+@media (min-width: 992px) and (max-width: 1199px) {
+ #playPic {
+    height: 400px;
+    width: 400px;
+  }
+
+  .objects, .dark, #dark, #colors, .light, #enterGlow, #innerWhite {
+      height: 303px;
+      width: 300px;
+      margin-left: -152px;
+      margin-bottom: -150px;
+  }
+
+  .darkImg, .lightImg {
+    height: 303px;
+    width: 300px;
+  }
+
+  #page1, #page2, #hello2, #text {
+    font-size: 1.20em;
+  }
+
+  .textContainer h3 {
+    position: relative;
+    top: 40%;
+    transform: translateY(30%);
+  }
+
+  #text {
+    transform: translateY(70vh);
+  }
+}
+/* large desktops and up ----------- */
+@media screen and (min-width: 1200px) {
+ #playPic {
+    height: 500px;
+    width: 500px;
+  }
+
+  .objects, .dark, #dark, #colors, .light, #enterGlow, #innerWhite {
+      height: 404px;
+      width: 400px;
+      margin-left: -202px;
+      margin-bottom: -200px;
+  }
+
+  .darkImg, .lightImg {
+    height: 404px;
+    width: 400px;
+  }
+
+  #page1, #page2, #hello2 , #text{
+    margin-top: 20px;
+    font-size: 1.35em;
+  }
+
+  .textContainer h3{
+    position: relative;
+    top: 25%;
+    transform: translateY(15%);
+  }
+
+  #text {
+    transform: translateY(75vh);
+  }
+}
+
 #page2 {
   color: white;
   z-index: 6;
@@ -145,6 +303,18 @@
   display: none;
 }
 
+#play1 {
+  position: fixed;
+  z-index: 30;
+  color: white;
+}
+
+#playPic {
+  z-index: 30;
+  position: fixed;
+  display: block;
+  top: 10%;
+}
 
 #hello2 {
   color: gold;
@@ -160,7 +330,6 @@
 }
 
 table {
-  width: 50%;
   height: 100vh;
   margin-left: auto;
   margin-right: auto;
@@ -292,6 +461,11 @@ p {
   to {
     transform: scale(1.0);
   }
+}
+
+#divineCompassion {
+  z-index: 50;
+  position: fixed;
 }
 
 #deitiesInCosmos {
@@ -547,11 +721,26 @@ p {
 #hyperspace {
   width: 100vw;
   height: 100vh;
-  position: fixed;
-  z-index: 22;
+  position: relative;
+  z-index: 25;
   display: none;
 }
 
+.upArrowGrow {
+  transform: scale(1.2);
+}
+
+#upArrow {
+  width: 1009;
+  height: 137;
+  top: 70%;
+  right: 50%;
+  margin-top: -68px;
+  margin-right: -50px;
+  position: fixed;
+  z-index: 30;
+  display: none;
+}
 
 .rippleImg {
   box-shadow: inset rgba(0, 0, 0, 0.6);
@@ -590,4 +779,10 @@ p {
 
 @keyframes scaleUp {
     from    { opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+
+#bgOne {
+  position: relative;
+  width: 100vw;
+  z-index: 5;
 }

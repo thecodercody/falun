@@ -4,8 +4,20 @@ angular.module('thegreatlaw', ['ngRoute', 'ngAnimate'])
     return {};
   })
 
+  .controller('BeginningPlayCtrl', ['$scope', function($scope){
+
+    $scope.$on('$routeChangeSuccess', function(){
+
+      $scope.pageClass = 'beginningPlay';
+      
+      
+    });
+  }])
+
   .controller('MainCtrl', ['$scope', function($scope){
     $scope.$on('$routeChangeSuccess', function(){
+
+      
       $scope.pageClass = 'home';
       $('#page1').fadeIn(4000);
       setTimeout(function(){
@@ -16,61 +28,63 @@ angular.module('thegreatlaw', ['ngRoute', 'ngAnimate'])
 
   .controller('FalunCtrl', ['$scope', 'appFact', function($scope, appFact){
    $scope.$on('$routeChangeSuccess', function(){
+ 
       $('#divineCompassion').remove();
+
       $scope.pageClass = 'falun';
        $('#rightArrow').remove();
         $('#leftArrow').remove();
-      var jishi = $('<audio id="jishi" autoplay loop preload="auto"><source src="sound/jishi.mp3" type="audio/mp3"></audio>');
+      var jishi = $('<audio id="jishi" autoplay loop preload="auto"><source src="client/sound/jishi.mp3" type="audio/mp3"></audio>');
       $('body').append(jishi);
       var darks = $('.dark'),
          lights = $('.light'),
          begins = $('#beginButton');
 
-      var lightLinks = ["img/bclearsmall/tmp-0.gif",
-                         "img/bclearsmall/tmp-1.gif",
-                         "img/bclearsmall/tmp-2.gif",
-                         "img/bclearsmall/tmp-3.gif",
-                         "img/bclearsmall/tmp-4.gif",
-                         "img/bclearsmall/tmp-5.gif",
-                         "img/bclearsmall/tmp-6.gif",
-                         "img/bclearsmall/tmp-7.gif",
-                         "img/bclearsmall/tmp-8.gif",
-                         "img/bclearsmall/tmp-9.gif",
-                         "img/bclearsmall/tmp-10.gif",
-                         "img/bclearsmall/tmp-11.gif"
+      var lightLinks = ["client/img/bclearsmall/tmp-0.gif",
+                         "client/img/bclearsmall/tmp-1.gif",
+                         "client/img/bclearsmall/tmp-2.gif",
+                         "client/img/bclearsmall/tmp-3.gif",
+                         "client/img/bclearsmall/tmp-4.gif",
+                         "client/img/bclearsmall/tmp-5.gif",
+                         "client/img/bclearsmall/tmp-6.gif",
+                         "client/img/bclearsmall/tmp-7.gif",
+                         "client/img/bclearsmall/tmp-8.gif",
+                         "client/img/bclearsmall/tmp-9.gif",
+                         "client/img/bclearsmall/tmp-10.gif",
+                         "client/img/bclearsmall/tmp-11.gif"
       ];
 
-      var darkLinks = ["img/dark/resized/b1.png",
-                         "img/dark/resized/b2.png",
-                         "img/dark/resized/b3.png",
-                         "img/dark/resized/b4.png",
-                         "img/dark/resized/b5.png",
-                         "img/dark/resized/b6.png",
-                         "img/dark/resized/b7.png",
-                         "img/dark/resized/b8.png",
-                         "img/dark/resized/b9.png",
-                         "img/dark/resized/b10.png",
-                         "img/dark/resized/b11.png",
-                         "img/dark/resized/b12.png"
+      var darkLinks = ["client/img/dark/resized/b1.png",
+                         "client/img/dark/resized/b2.png",
+                         "client/img/dark/resized/b3.png",
+                         "client/img/dark/resized/b4.png",
+                         "client/img/dark/resized/b5.png",
+                         "client/img/dark/resized/b6.png",
+                         "client/img/dark/resized/b7.png",
+                         "client/img/dark/resized/b8.png",
+                         "client/img/dark/resized/b9.png",
+                         "client/img/dark/resized/b10.png",
+                         "client/img/dark/resized/b11.png",
+                         "client/img/dark/resized/b12.png"
       ];
 
-      var zLinks = ["img/zhenshanren1.png",
-                    "img/zhenshanren2.png",
-                    "img/zhenshanren3.png",
-                    "img/zhenshanren4.png",
-                    "img/zhenshanren5.png",
-                    "img/zhenshanren6.png",
-                    "img/zhenshanren7.png",
-                    "img/zhenshanren8.png",
-                    "img/zhenshanren9.png"
+      var zLinks = ["client/img/zhenshanren1.png",
+                    "client/img/zhenshanren2.png",
+                    "client/img/zhenshanren3.png",
+                    "client/img/zhenshanren4.png",
+                    "client/img/zhenshanren5.png",
+                    "client/img/zhenshanren6.png",
+                    "client/img/zhenshanren7.png",
+                    "client/img/zhenshanren8.png",
+                    "client/img/zhenshanren9.png"
       ];
 
         $('#rightArrow').remove();
         $('#leftArrow').remove();
 
         setTimeout(function() {
-          $('#beginButton').append('<a href="/intro"><img id="rightArrow" src="../img/arrow/right/rightArrow.gif" style="display: none"></a>');
-          $('#leftArrowWrapper').append('<a href="/home2"><img id="leftArrow" src="../img/arrow/left/leftArrow.gif" style="display: none"></a>');
+          $('#beginButton').append('<a href="/intro"><img class="img-fluid" id="rightArrow" src="../client/img/arrow/right/rightArrow.gif" style="display: none"></a>');
+          $('#leftArrowWrapper').append('<a href="/home2"><img class="img-fluid" id="leftArrow" src="../client/img/arrow/left/leftArrow.gif" style="display: none"></a>');
           $('#leftArrow, #rightArrow').fadeIn(2000);
           $('#fingers').fadeIn(2000);
           setTimeout(function(){
@@ -80,14 +94,15 @@ angular.module('thegreatlaw', ['ngRoute', 'ngAnimate'])
 
 
         $.each(darkLinks, function(i, el){
-          $('<img class="darkImg">').attr('src', el).appendTo(darks);
+          $('<img class="darkImg img-fluid">').attr('src', el).appendTo(darks);
         });
 
         $.each(lightLinks, function(i, el){
-          $('<img class="lightImg">').attr('src', el).appendTo(lights);
+          $('<img class="lightImg img-fluid">').attr('src', el).appendTo(lights);
         });  
 
         $('img', darks).each(function(i, el){
+          $(el).addClass('img-fluid');
           if (i !== 0){
             $(el).css('display', 'none');
           }
@@ -100,6 +115,7 @@ angular.module('thegreatlaw', ['ngRoute', 'ngAnimate'])
         });
 */
         ('img', lights).each(function(i, el){
+          $(el).addClass('img-fluid');
           if (i !== 0){
             $(el).css('display', 'none');
           }
@@ -260,6 +276,28 @@ angular.module('thegreatlaw', ['ngRoute', 'ngAnimate'])
       
       rotator();
 
+      
+
+      if(!!('ontouchstart' in window)){
+        $('.dark').bind('touchstart', function(){
+          $('.dark').addClass('hidden');
+          $('.light').removeClass('hidden');
+          $('#dark').addClass('hidden');
+          $('#enterGlow').removeClass('hidden');
+          $('#bgColor').removeClass('hidden');
+          $('#innerWhite').removeClass('hidden');
+      });
+
+      $('.light').bind('touchend', function(){
+        $('.light').addClass('hidden');
+        $('.dark').removeClass('hidden');
+        $('#dark').removeClass('hidden');
+        $('#enterGlow').addClass('hidden');
+        $('#bgColor').addClass('hidden');
+        $('#innerWhite').addClass('hidden');
+      });
+      }
+      else{
       $('.dark').on('mouseenter', function(){
         $('.dark').addClass('hidden');
         $('.light').removeClass('hidden');
@@ -277,6 +315,10 @@ angular.module('thegreatlaw', ['ngRoute', 'ngAnimate'])
         $('#bgColor').addClass('hidden');
         $('#innerWhite').addClass('hidden');
       });
+      }
+
+
+
     });
   }])
 
@@ -286,31 +328,42 @@ angular.module('thegreatlaw', ['ngRoute', 'ngAnimate'])
     $routeProvider
 
       .when('/', {
-        templateUrl: '../pages/home.html',
+        templateUrl: 'client/pages/beginningPlay.html',
+        controller: 'BeginningPlayCtrl'
+      })
+
+      .when('/home', {
+        templateUrl: 'client/pages/home.html',
         controller: 'MainCtrl'
       })
 
       .when('/home2', {
-        templateUrl: '../pages/home2.html',
+        templateUrl: 'client/pages/home2.html',
         controller: 'Home2Ctrl'
       })
 
       .when('/falun', {
-        templateUrl : '../pages/falun.html',
+        templateUrl : 'client/pages/falun.html',
         controller: 'FalunCtrl'
       })
 
       .when('/intro', {
-        templateUrl: '../pages/intro.html',
+        templateUrl: 'client/pages/intro.html',
         controller: 'IntroCtrl'
       })
 
       .when('/descent', {
-        templateUrl: '../pages/descent.html',
+        templateUrl: 'client/pages/descent.html',
         controller: 'DescentCtrl'
+      })
+
+      .when('/one', {
+        templateUrl: 'client/pages/one.html',
+        controller: 'OneCtrl'
       })
 
       .otherwise({redirectTo: '/'});
 
       $locationProvider.html5Mode(true);
+      $locationProvider.hashPrefix('!');
   })

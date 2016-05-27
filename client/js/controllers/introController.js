@@ -14,7 +14,7 @@ angular.module('thegreatlaw').controller('IntroCtrl', ['$scope', function($scope
         setTimeout(function(){
           $('#jishi').remove();
           $('#divineCompassion').remove();
-          $('body').append($('<audio id="birdsSound" autoplay loop preload="auto"> <source src="sound/birds2.mp3" type="audio/mp3"/>'))
+          $('body').append($('<audio id="birdsSound" autoplay loop preload="auto"> <source src="client/sound/birds2.mp3" type="audio/mp3"/>'))
           
           setTimeout(function(){
             $('.hello').remove();
@@ -57,9 +57,9 @@ angular.module('thegreatlaw').controller('IntroCtrl', ['$scope', function($scope
 
 
     var imgs = $('.imgs');
-    var imgLinks = ["../../img/maiden4.png",
-                     "../../img/maiden1.png",
-                     "../../img/maiden2.jpg"
+    var imgLinks = ["../../client/img/maiden4.png",
+                     "../../client/img/maiden1.png",
+                     "../../client/img/maiden2.jpg"
                    ];
     $.each(imgLinks, function(i, el){
       $('<img class="heavenImgs">').attr('src', el).appendTo(imgs);

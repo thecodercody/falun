@@ -8,7 +8,7 @@ angular.module('thegreatlaw').controller('DescentCtrl', ['$scope', function($sco
     $('#divineCompassion').remove();
     $('#sparklingRays, #colors, .light, #rightArrow').hide();
     $('#blackout').fadeIn(2000);
-    var creatorVoice = $('<audio id="creatorVoice" autoplay preload="auto"><source src="sound/creatorVoice1.mp3" type="audio/mp3"/></audio>');
+    var creatorVoice = $('<audio id="creatorVoice" autoplay preload="auto"><source src="client/sound/creatorVoice1.mp3" type="audio/mp3"/></audio>');
     $('body').append(creatorVoice);
     setTimeout(function(){
       $('#text2').fadeIn(2500);
@@ -33,7 +33,7 @@ angular.module('thegreatlaw').controller('DescentCtrl', ['$scope', function($sco
     var switcheroo = false;
 
     var creator = function(){
-      var music = $('<audio id="creation" autoplay loop preload="auto"><source src="sound/creation.mp3" type="audio/mp3"/></audio>');
+      var music = $('<audio id="creation" autoplay loop preload="auto"><source src="client/sound/creation.mp3" type="audio/mp3"/></audio>');
       $('body').append(music);
         
       $('#halo').fadeIn(10000);
@@ -46,27 +46,35 @@ angular.module('thegreatlaw').controller('DescentCtrl', ['$scope', function($sco
       setTimeout(function(){
         $('#theSummon').fadeIn(2500);
         setTimeout(function(){
-          $('#rightArrowWrapper').append('<img id="rightArrow" src="../img/arrow/right/rightArrow.gif" style="display: none">');
-          $('#rightArrowWrapper').fadeIn(2500);
-
-        }, 2500);
+          $('#sparklingRays, #colors, #zfRaysTop, .ripples, .rippleImg, #theSummon, .light, #falunRays, #halo, #masterLiFalunPic, #ripples, #zhen, #shan, #ren').fadeOut(2500);
+          $('#hyperspace').fadeIn(2500);
+          setTimeout(function(){
+            $('#upArrow').fadeIn(2500);
+            $('#upArrow').on('mouseenter', function(){
+              $('#upArrow').addClass('upArrowGrow');
+            });
+            $('#upArrow').on('mouseleave', function(){
+              $('#upArrow').removeClass('upArrowGrow');
+            });
+          }, 5000);
+        }, 10000);
       }, 13000);
 
 
       var lights = $('.light');
 
-      var lightLinks = ["../../img/bclearsmall/tmp-0.gif",
-                         "../../img/bclearsmall/tmp-1.gif",
-                         "../../img/bclearsmall/tmp-2.gif",
-                         "../../img/bclearsmall/tmp-3.gif",
-                         "../../img/bclearsmall/tmp-4.gif",
-                         "../../img/bclearsmall/tmp-5.gif",
-                         "../../img/bclearsmall/tmp-6.gif",
-                         "../../img/bclearsmall/tmp-7.gif",
-                         "../../img/bclearsmall/tmp-8.gif",
-                         "../../img/bclearsmall/tmp-9.gif",
-                         "../../img/bclearsmall/tmp-10.gif",
-                         "../../img/bclearsmall/tmp-11.gif"
+      var lightLinks = ["../../client/img/bclearsmall/tmp-0.gif",
+                         "../../client/img/bclearsmall/tmp-1.gif",
+                         "../../client/img/bclearsmall/tmp-2.gif",
+                         "../../client/img/bclearsmall/tmp-3.gif",
+                         "../../client/img/bclearsmall/tmp-4.gif",
+                         "../../client/img/bclearsmall/tmp-5.gif",
+                         "../../client/img/bclearsmall/tmp-6.gif",
+                         "../../client/img/bclearsmall/tmp-7.gif",
+                         "../../client/img/bclearsmall/tmp-8.gif",
+                         "../../client/img/bclearsmall/tmp-9.gif",
+                         "../../client/img/bclearsmall/tmp-10.gif",
+                         "../../client/img/bclearsmall/tmp-11.gif"
       ];
 
       $.each(lightLinks, function(i, el){
@@ -83,30 +91,30 @@ angular.module('thegreatlaw').controller('DescentCtrl', ['$scope', function($sco
 
       var ripples = $('.ripples');
 
-        var rippleLinks = ["../../img/ripple/outwards/0.gif",
-                          "../../img/ripple/outwards/1.gif",
-                          "../../img/ripple/outwards/2.gif",
-                          "../../img/ripple/outwards/3.gif",
-                          "../../img/ripple/outwards/4.gif",
-                          "../../img/ripple/outwards/5.gif",
-                          "../../img/ripple/outwards/6.gif",
-                          "../../img/ripple/outwards/7.gif",
-                          "../../img/ripple/outwards/8.gif",
-                          "../../img/ripple/outwards/9.gif",
-                          "../../img/ripple/outwards/10.gif",
-                          "../../img/ripple/outwards/11.gif",
-                          "../../img/ripple/outwards/12.gif",
-                          "../../img/ripple/outwards/13.gif",
-                          "../../img/ripple/outwards/14.gif",
-                          "../../img/ripple/outwards/15.gif",
-                          "../../img/ripple/outwards/16.gif",
-                          "../../img/ripple/outwards/17.gif",
-                          "../../img/ripple/outwards/18.gif",
-                          "../../img/ripple/outwards/19.gif",
-                          "../../img/ripple/outwards/20.gif",
-                          "../../img/ripple/outwards/21.gif",
-                          "../../img/ripple/outwards/22.gif",
-                          "../../img/ripple/outwards/23.gif"
+        var rippleLinks = ["../../client/img/ripple/outwards/0.gif",
+                          "../../client/img/ripple/outwards/1.gif",
+                          "../../client/img/ripple/outwards/2.gif",
+                          "../../client/img/ripple/outwards/3.gif",
+                          "../../client/img/ripple/outwards/4.gif",
+                          "../../client/img/ripple/outwards/5.gif",
+                          "../../client/img/ripple/outwards/6.gif",
+                          "../../client/img/ripple/outwards/7.gif",
+                          "../../client/img/ripple/outwards/8.gif",
+                          "../../client/img/ripple/outwards/9.gif",
+                          "../../client/img/ripple/outwards/10.gif",
+                          "../../client/img/ripple/outwards/11.gif",
+                          "../../client/img/ripple/outwards/12.gif",
+                          "../../client/img/ripple/outwards/13.gif",
+                          "../../client/img/ripple/outwards/14.gif",
+                          "../../client/img/ripple/outwards/15.gif",
+                          "../../client/img/ripple/outwards/16.gif",
+                          "../../client/img/ripple/outwards/17.gif",
+                          "../../client/img/ripple/outwards/18.gif",
+                          "../../client/img/ripple/outwards/19.gif",
+                          "../../client/img/ripple/outwards/20.gif",
+                          "../../client/img/ripple/outwards/21.gif",
+                          "../../client/img/ripple/outwards/22.gif",
+                          "../../client/img/ripple/outwards/23.gif"
         ];
 
         $.each(rippleLinks, function(i, el){
