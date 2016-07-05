@@ -1,0 +1,11 @@
+{
+  "name": "myPokedex",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "latest",
+    "angular-animate": "latest",
+    "angular-route": "latest",
+    "bootstrap": "latest",
+    "jquery": "latest"
+  }
+}

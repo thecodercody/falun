@@ -85,11 +85,7 @@ angular.module('thegreatlaw', ['ngRoute', 'ngAnimate'])
         setTimeout(function() {
           $('#beginButton').append('<a href="/intro"><img class="img-fluid" id="rightArrow" src="../client/img/arrow/right/rightArrow.gif" style="display: none"></a>');
           $('#leftArrowWrapper').append('<a href="/home2"><img class="img-fluid" id="leftArrow" src="../client/img/arrow/left/leftArrow.gif" style="display: none"></a>');
-          $('#leftArrow, #rightArrow').fadeIn(2000);
-          $('#fingers').fadeIn(2000);
-          setTimeout(function(){
-            $('#fingers').hide();
-          }, 3000);
+          $('#leftArrow, #rightArrow').fadeIn(2000);          
         }, 43200);
 
 
@@ -357,9 +353,9 @@ angular.module('thegreatlaw', ['ngRoute', 'ngAnimate'])
         controller: 'DescentCtrl'
       })
 
-      .when('/one', {
-        templateUrl: 'client/pages/one.html',
-        controller: 'OneCtrl'
+      .when('/first', {
+        templateUrl: 'client/pages/thegreatlaw-2.html',
+        controller: 'Main2Ctrl'
       })
 
       .otherwise({redirectTo: '/'});

@@ -1,0 +1,15 @@
+{
+  "name": "thegreatlaw",
+  "version": "1.0.0",
+  "description": "Falun Dafa is Good",
+  "main": "server.js",
+  "author": "-thecodercody-",
+  "dependencies": {
+    "body-parser": "latest",
+    "cookie-parser": "latest",
+    "express": "latest",
+    "method-override": "latest",
+    "nodemon": "latest",
+    "path": "latest"
+  }
+}

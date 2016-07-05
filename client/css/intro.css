@@ -60,6 +60,10 @@
   display: none;
 }
 
+.darkImg, .lightImg {
+  z-index: 9;
+}
+
 #masking {
   z-index: 5;
 }
@@ -143,7 +147,11 @@
   height: 100vh;
 }
 
-
+#playPic {
+  position: relative;
+  display: block;
+  text-align: center;
+}
 
 /* Extra small devices (phones, up to 480px) */
 @media screen and (max-width: 767px) {
@@ -181,24 +189,26 @@
     font-size: 0.7em;
   }
 
-  #text {
-    position: relative;
-    bottom: -57vh;
-    transform: translateY(5vh);
-  }
-
   .textContainer h3{
   position: relative;
   top: 50%;
   transform: translateY(30%);
+  }
+
+  #text {
+    transform: translateY(65vh);
+  }
 }
 
-}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) {
  #playPic {
     height: 300px;
     width: 300px;
+    top: 50%;
+    right: 50%;
+    transform: translateX(50%);
   }
 
   .objects, .dark, #dark, #colors, .light, #enterGlow, #innerWhite {
@@ -217,14 +227,14 @@
     font-size: 1.0em;
   }
 
-  .textContainer h3{
-    position: relative;
-    top: 50%;
-    transform: translateY(40%);
+  .textContainer h3 {
+    position: absolute;
+    top: 40%;
+    transform: translateY(30%);
   }
 
   #text {
-    transform: translateY(65vh);
+    transform: translateY(70vh);
   }
 }
 /* tablets/desktops and up ----------- */
@@ -232,6 +242,9 @@
  #playPic {
     height: 400px;
     width: 400px;
+    top: 50%;
+    right: 50%;
+    transform: translateX(50%);
   }
 
   .objects, .dark, #dark, #colors, .light, #enterGlow, #innerWhite {
@@ -257,7 +270,7 @@
   }
 
   #text {
-    transform: translateY(70vh);
+    transform: translateY(85vh);
   }
 }
 /* large desktops and up ----------- */
@@ -265,6 +278,9 @@
  #playPic {
     height: 500px;
     width: 500px;
+    top: 50%;
+    right: 50%;
+    transform: translateX(50%);
   }
 
   .objects, .dark, #dark, #colors, .light, #enterGlow, #innerWhite {
@@ -291,7 +307,7 @@
   }
 
   #text {
-    transform: translateY(75vh);
+    transform: translateY(80vh);
   }
 }
 
