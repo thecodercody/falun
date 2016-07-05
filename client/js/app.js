@@ -353,9 +353,9 @@ angular.module('thegreatlaw', ['ngRoute', 'ngAnimate'])
         controller: 'DescentCtrl'
       })
 
-      .when('/first', {
-        templateUrl: 'client/pages/thegreatlaw-2.html',
-        controller: 'Main2Ctrl'
+      .when('/one', {
+        templateUrl: 'client/pages/one.html',
+        controller: 'OneCtrl'
       })
 
       .otherwise({redirectTo: '/'});
