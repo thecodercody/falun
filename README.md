@@ -1,10 +1,12 @@
 # Animated, Interactive Law Wheel in the Heavens
 
 VIEW LIVE DEMO HERE:
+
 https://thelawwheel.herokuapp.com
+
 (note that it may take a few moments for the Heroku server to start)
  
-[logo]
+<img width="1845" alt="thelawwheel" src="https://user-images.githubusercontent.com/8681966/168314684-f8c0c141-8b02-4119-b4a4-ead838255681.png">
 
 # Technologies Used
 
